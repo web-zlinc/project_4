@@ -18,7 +18,59 @@
                     <img :src="item" />
               </el-carousel-item>
             </el-carousel>
-            <ul class="forum-list"></ul>
+            <ul class="forum-list">
+                <li>
+                    <div class="fl-imgbox">
+                        <img :src="portrait" alt="" />
+                    </div>
+                    <div class="fl-info">
+                        <h4>Eddie</h4>
+                        <p>这世上只有一种成功，就是能用自己喜欢的方式度过自己的一生</p>
+                        <img :src="together" />
+                        <h5>
+                            <span class="info-time">2017-12-08</span>
+                            <i class="el-icon-star-off like"></i>
+                            <span class="info-like">100</span>
+                            <i class="el-icon-news news"></i>
+                            <span class="info-forum">37</span>
+                        </h5>
+                    </div>
+                </li>
+                <li>
+                    <div class="fl-imgbox">
+                        <img :src="portrait" alt="" />
+                    </div>
+                    <div class="fl-info">
+                        <h4>Eddie</h4>
+                        <p>这世上只有一种成功，就是能用自己喜欢的方式度过自己的一生</p>
+                        <img :src="together" />
+                        <h5>
+                            <span class="info-time">2017-12-08</span>
+                            <i class="el-icon-star-off like"></i>
+                            <span class="info-like">100</span>
+                            <i class="el-icon-news news"></i>
+                            <span class="info-forum">37</span>
+                        </h5>
+                    </div>
+                </li>
+                <li>
+                    <div class="fl-imgbox">
+                        <img :src="portrait" alt="" />
+                    </div>
+                    <div class="fl-info">
+                        <h4>Eddie</h4>
+                        <p>这世上只有一种成功，就是能用自己喜欢的方式度过自己的一生</p>
+                        <img :src="together" />
+                        <h5>
+                            <span class="info-time">2017-12-08</span>
+                            <i class="el-icon-star-off like"></i>
+                            <span class="info-like">100</span>
+                            <i class="el-icon-news news"></i>
+                            <span class="info-forum">37</span>
+                        </h5>
+                    </div>
+                </li>
+            </ul>
         </main>
         <footer id="f-footer"></footer>
     </div>
@@ -30,6 +82,8 @@
         data(){
             return {
                 dataset:[`src/assets/imgs/1.png`,`src/assets/imgs/2.png`,`src/assets/imgs/3.png`,`src/assets/imgs/4.png`,'../../../src/assets/imgs/5.png'],
+                portrait:require('../../assets/imgs/portrait.jpg'),
+                together:require('../../assets/imgs/toggeter.png')
             }
         }
     }

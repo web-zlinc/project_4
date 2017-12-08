@@ -51,20 +51,83 @@
     }
     #f-main{
         flex:1;
-        .el-carousel__item h3 {
-            color: #475669;
-            font-size: 14px;
-            opacity: 0.75;
-            line-height: 150px;
-            margin: 0;
-        }
+        overflow-x:hidden;
+        .el-carousel{
+            height:4.0rem;
+            .el-carousel__item img {
+                width:100%;
+            }
 
-        .el-carousel__item:nth-child(2n) {
-             background-color: #99a9bf;
+            .el-carousel__item:nth-child(2n) {
+                 background-color: #99a9bf;
+            }
+              
+            .el-carousel__item:nth-child(2n+1) {
+                 background-color: #d3dce6;
+            }   
         }
-          
-        .el-carousel__item:nth-child(2n+1) {
-             background-color: #d3dce6;
+        .forum-list{
+            >li{
+                border-top:0.015625rem solid #CCC;
+                margin-left:0.46875rem;
+                margin-top:0.46875rem;
+                display:flex;
+                .fl-imgbox{
+                    width:1.5625rem;
+                    height:1.5625rem;
+                    border:1px solid #ccc;
+                    border-radius:50%;
+                    >img{
+                        width: 100%;
+                        border-radius:50%;
+                    }
+                }
+                .fl-info{
+                    flex:1;
+                    padding-left:0.3125rem;
+                    >h4{
+                        font-size:0.46875rem;
+                        padding-top:0.15625rem;
+                    }
+                    >p{
+                        font-size:0.4375rem;
+                        padding-top:0.15625rem;
+                    }
+                    >img{
+                        width: 100%;
+                        padding-top:0.15625rem;
+                    }
+                    >h5{
+                        font-size:0.375rem;
+                        margin:0.15625rem 0;
+                        font-weight:normal;
+                        display:flex;
+                        justify-content:space-between;
+                        position:relative;
+                        .info-like{
+                            padding-left:1.5625rem;
+                        }
+                        .info-forum{
+                            padding-right:0.46875rem;
+                        }
+                        .info-time{
+                            padding-left:0.15625rem;
+                        }
+                        .like{
+                            font-size:0.5rem;
+                            position:absolute;
+                            left:4.171875rem;
+                            top:0;
+                        }
+                        .news{
+                            font-size:0.5rem;
+                            position:absolute;
+                            left:6.09375rem;
+                            top:0;
+                        }
+                    }
+                }
+            }
         }
     }
     #f-footer{
