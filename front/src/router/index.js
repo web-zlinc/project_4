@@ -1,9 +1,10 @@
 import Vue from 'vue';
 import VueRouter from 'vue-router';
 
-import LoginComponent from '../components/login/Login.vue'
-import StudentComponent from '../components/students/students.vue'
-import ProductComponent from '../components/products/products.vue'
+import LoginComponent from '../components/login-c7/Login-c7.vue'
+import RegisterComponent from '../components/register-c7/register-c7.vue'
+import ForumComponent from '../components/forum-c7/forum-c7.vue'
+
 
 Vue.use(VueRouter);
 
@@ -15,15 +16,15 @@ var router = new VueRouter({
             component: LoginComponent
         },
         {
-            path: '/students',
-            name: 'student',
-            component: StudentComponent
+            path: '/register',
+            name: 'register',
+            component: RegisterComponent
         },
         {
-            path: '/products',
-            name: 'product',
-            component: ProductComponent
-        }        
+            path: '/forum',
+            name: 'forum',
+            component: ForumComponent
+        }
     ]
 })
 
