@@ -14,7 +14,7 @@
     $username = isset($_POST['username']) ? $_POST['username'] : '';
     $password = isset($_POST['password']) ? $_POST['password'] : '';
 
-    $sql = "select * from user where username = $username and password = $password";
+    $sql = "select * from admin where username = '$username' and password = '$password'";
 
     // 调用DBhelper中的query方法
     $result = query($sql);

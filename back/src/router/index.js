@@ -2,21 +2,21 @@ import Vue from 'vue';
 import VueRouter from 'vue-router';
 
 import LoginComponent from '../components/login/login.vue'
-import InformationComponent from '../components/students/students.vue'
+import BackgroundComponent from '../components/background/background.vue'
 
 Vue.use(VueRouter);
 
 var router = new VueRouter({
     routes: [
         {
-            path: '/login',
-            name: 'login',
+            path: '/',
+            name: '',
             component: LoginComponent
         },
         {
-            path: '/information',
-            name: 'information',
-            component: InformationComponent
+            path: '/background',
+            name: 'background',
+            component: BackgroundComponent
         }       
     ]
 })

@@ -1,43 +1,61 @@
+
 <template>
-    <div class="login-box">
-        <div class="col-sm-12 b-r">
-            <h3 class="m-t-none m-b">登录</h3>
-            <form role="form">
-                <div class="form-group text-left">
-                    <label>用户名：</label>
-                    <input type="text" v-model="username" name="username" placeholder="请输入用户名" class="form-control required">
-                </div>
-                <div class="form-group  text-left">
-                    <label>密码：</label>
-                    <input type="password" v-model="pwd" name="password" placeholder="请输入密码" class="form-control required">
-                </div>
-                <div>
-                    <input type="button" class="btn btn-primary pull-right m-t-n-xs" value="登录" @click="login">
-                </div>
-            </form>
-        </div>
-        <div class="copyright">2017 © dk by www.dk-lan.com</div>
+    <div>
+        <el-form  status-icon  label-width="100px" class="demo-ruleForm">
+            <el-form-item label="用户名" prop="pass">
+                <el-input type="text" v-model="username" auto-complete="off"></el-input>
+            </el-form-item>
+            <el-form-item label="密码" prop="checkPass">
+                <el-input type="password" v-model="password" auto-complete="off"></el-input>
+            </el-form-item>
+            <el-form-item>
+                <el-button type="primary" @click="submitForm">登录</el-button>
+            </el-form-item>
+        </el-form>
+        <spinner v-if="show"></spinner>
     </div>
 </template>
-
-<script type="text/javascript">
+<script>
     import './login.scss'
-    import { mapGetters, mapActions } from 'vuex'
-    import $ from 'jquery'
+    import axios from 'axios';
+    import superagent from 'superagent';
+    import spinner from '../spinner/spinner.vue';
+    import qs from 'qs'
     export default {
-        data: function(){
+        data() {
             return {
-                username: '',
-                pwd: ''
-            }
+              username: '',
+              password: '',
+              show: false,
+                
+            };  
         },
         methods: {
-            login: function(event){
-                if($('form').valid()){
-                    this.$store.dispatch('login', {username: this.username, password: this.pwd})
-                }
+            submitForm() {
+                this.show = true;
+                axios({
+                   url: 'http://10.3.135.246:333/back/php/user.php',
+                   method: 'post',
+                   data: qs.stringify({username: this.username, password: this.password}),
+                   headers: {
+                     'Content-Type': 'application/x-www-form-urlencoded; charset=UTF-8'
+                   }
+                }).then(res=>{
+                     this.show=false;
+                    if(res.data.length>0){
+                        console.log(this)
+                        this.$router.push({name: 'background'});
+                    }else{
+                         alert('用户名或密码不正确');
+                    }
+                        
+                });
             }
-            // ...mapActions(['login'])
+            
+        },
+        components:{
+           spinner:spinner
         }
+         
     }
 </script>
