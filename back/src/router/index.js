@@ -3,6 +3,9 @@ import VueRouter from 'vue-router';
 
 import LoginComponent from '../components/login/login.vue'
 import BackgroundComponent from '../components/background/background.vue'
+// import DatagridComponent from '../components/datagrid/datagrid.vue'
+import UserInforComponent from '../components/userInformation/userInformation.vue'
+import JobsComponent from '../components/jobs/jobs.vue'
 
 Vue.use(VueRouter);
 
@@ -16,8 +19,26 @@ var router = new VueRouter({
         {
             path: '/background',
             name: 'background',
-            component: BackgroundComponent
-        }       
+            component: BackgroundComponent,
+            children:[
+                {
+                    path: '/userInformation',
+                    name: 'userInformation',
+                    component: UserInforComponent
+        
+                },{
+                    path: '/jobs',
+                    name: 'jobs',
+                    component: JobsComponent
+                }
+            ]
+        },
+        // {
+        //     path: '/datagrid',
+        //     name: 'datagrid',
+        //     component: DatagridComponent
+        // },
+             
     ]
 })
 

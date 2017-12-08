@@ -34,7 +34,7 @@
             submitForm() {
                 this.show = true;
                 axios({
-                   url: 'http://10.3.135.246:333/back/php/user.php',
+                   url: 'http://10.3.135.246:333/back/php/admin.php',
                    method: 'post',
                    data: qs.stringify({username: this.username, password: this.password}),
                    headers: {

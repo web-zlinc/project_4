@@ -9,6 +9,8 @@
         <el-button size="small">退出</el-button>
       </div>
     </div>
+
+    <!-- 工具栏 -->
     <ul class="y_toolbar">
       <li class="y_search">
         <div style="margin-top: 15px;">
@@ -31,13 +33,15 @@
           <!-- 左侧导航 -->
       <div class="main-left">
         <el-menu default-active="/activePublic" class="el-menu-vertical-demo" :router="true">
-          <el-menu-item index="/activePublic" :class="{'isActive': active}">用户管理</el-menu-item>
-          <el-menu-item index="/activeManage" :class="{'isActive': !active}">招聘信息</el-menu-item>
+          <el-menu-item index="/userInformation" :class="{'isActive': active}">用户管理</el-menu-item>
+          <el-menu-item index="/jobs" :class="{'isActive': !active}">招聘信息</el-menu-item>
         </el-menu>
       </div>
 
         <!-- 右侧主内容区 -->
       <div  class="main-right" >
+        <!-- <userInformation></userInformation> -->
+        <router-view></router-view>
       </div>
     </main>
   </div>
@@ -45,14 +49,10 @@
 
 <script>
     import './background.scss';
-    import '../../assets/common/base.css'
+    import '../../assets/common/base.css';
+    import userInformation from '../userInformation/userInformation.vue'
 
-    import Vue from 'vue'
-    import Element from 'element-ui'
-    import 'element-ui/lib/theme-chalk/index.css'
-
-
-    Vue.use(Element)
+    import '../../router/index.js'
 
     export default {
       name: 'app',
@@ -64,7 +64,12 @@
           input5: '',
           select: ''
         }
+      },
+      components:{
+        userInformation:userInformation
+        
       }
+      
     }
 </script>
 
