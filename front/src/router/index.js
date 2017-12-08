@@ -1,29 +1,28 @@
 import Vue from 'vue';
 import VueRouter from 'vue-router';
-
-import LoginComponent from '../components/login/Login.vue'
-import StudentComponent from '../components/students/students.vue'
-import ProductComponent from '../components/products/products.vue'
+import MineComponent from '../components/sm_mine/mine/mine.vue'
+import RecordComponent from '../components/sm_mine/record/record.vue'
+import InfoComponent from '../components/sm_mine/info/information.vue'
 
 Vue.use(VueRouter);
 
 var router = new VueRouter({
     routes: [
         {
-            path: '/login',
-            name: 'login',
-            component: LoginComponent
+            path: '/mine',
+            name: 'mine',
+            component: MineComponent
         },
         {
-            path: '/students',
-            name: 'student',
-            component: StudentComponent
+            path:'/record',
+            name:'record',
+            component:RecordComponent
         },
         {
-            path: '/products',
-            name: 'product',
-            component: ProductComponent
-        }        
+            path:'/info',
+            name:'info',
+            component:InfoComponent
+        }
     ]
 })
 
