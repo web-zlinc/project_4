@@ -6,8 +6,8 @@ import InfoComponent from '../components/sm_mine/information.vue'
 import CollectComponent from '../components/sm_mine/collect.vue'
 import PostComponent from '../components/sm_mine/post.vue'
 Vue.use(VueRouter);
-
 var router = new VueRouter({
+    // mode: 'history',
     routes: [
         {
             path: '/mine',
@@ -40,3 +40,4 @@ var router = new VueRouter({
 })
 
 export default router;
+

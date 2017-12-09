@@ -17,7 +17,7 @@
         },
         methods:{
             p_return:function(){
-                this.$router.push({name:'mine'});
+               this.$router.back(-1);
             }
         },
         components:{

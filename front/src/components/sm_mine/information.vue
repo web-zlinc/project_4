@@ -60,7 +60,8 @@ import $ from 'jquery'
         },
         methods:{
             i_return:function(){
-                this.$router.push({name:'mine'})
+              // 返回上一页
+                this.$router.back(-1);
             },
             i_save:function(){  
                 this.$message('你的资料已保存成功！');            
