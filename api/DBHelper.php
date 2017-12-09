@@ -2,7 +2,7 @@
 //http://www.runoob.com/php/php-mysql-select.html
     function connect_oop(){
         // 配置参数
-        $servername = '10.3.135.225';
+        $servername = 'localhost';
         $username = 'root';
         $password = '';
         $database = 'partime';
@@ -38,8 +38,8 @@
     function connect(){
         $servername = "localhost";//
         $username = "root";
-        $password = "root";
-        $dbname = '1000phone'; 
+        $password = "";
+        $dbname = 'partime'; 
         //初始化连接，返回一个连接对象(包含所连接数据库的信息)
         $con = mysqli_connect($servername,$username,$password,$dbname); 
 

@@ -1,4 +1,37 @@
 #reply{
     height: 100%;
-    
+    display:flex;
+    flex-direction:column;
+    .rep-header{
+        height: 2.0rem;
+        background-color:#F7F8F9;
+        display:flex;
+        justify-content:center;
+        padding-top:1.0rem;
+        position:relative;
+        >h3{
+            width: 2.1875rem;
+            font-size:0.53125rem;
+            color:#A0ADB4;
+            &.rep-head-active{
+                color:#3886FC;
+                border-bottom:0.03125rem solid #3887FC;
+            }
+        }
+        .rep-icon{
+            position:absolute;
+            left:0.25rem;
+            top:1.0rem;
+            font-size:0.703125rem;
+            font-weight:bold;
+            color:#3886FC;
+        }
+    }
+    .rep-main{
+        flex:1;
+    }
+    .rep-footer{
+        height: 1.546875rem;
+        background-color:#F7F8F9;
+    }
 }
