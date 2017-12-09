@@ -1,6 +1,6 @@
 <template>
     <div id="reply">
-        <h3>never give up</h3>
+        <header id="rep-header"></header>
     </div>
 </template>
 

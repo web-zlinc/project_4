@@ -9,14 +9,18 @@ import ServiceComponent from '../components/service-c7/service-c7.vue'
 import ReplyComponent from '../components/reply-c7/reply-c7.vue'
 
 
+import MineComponent from '../components/sm_mine/mine/mine.vue'
+import RecordComponent from '../components/sm_mine/record/record.vue'
+import InfoComponent from '../components/sm_mine/info/information.vue'
+
 Vue.use(VueRouter);
 
 var router = new VueRouter({
     routes: [
         {
-            path: '/login',
-            name: 'login',
-            component: LoginComponent
+            path: '/mine',
+            name: 'mine',
+            component: MineComponent
         },
         {
             path: '/register',
@@ -27,6 +31,11 @@ var router = new VueRouter({
             path: '/forum',
             name: 'forum',
             component: ForumComponent
+        },
+        {
+            path: '/login',
+            name: 'login',
+            component: LoginComponent
         },
         {
             path: '/message',
@@ -42,6 +51,16 @@ var router = new VueRouter({
             path: '/reply',
             name: 'reply',
             component: ReplyComponent
+        },
+        {
+            path:'/record',
+            name:'record',
+            component:RecordComponent
+        },
+        {
+            path:'/info',
+            name:'info',
+            component:InfoComponent
         }
     ]
 })
