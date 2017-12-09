@@ -1,0 +1,48 @@
+#message{
+    height:100%;
+    display:flex;
+    flex-direction:column;
+    #mess-header{
+        height:2.03125rem;
+        background-color:#F7F8F8;
+        position:relative;
+        .mess-titel{
+            font-size:0.625rem;
+            color:#40516B;
+            text-align:center;
+            padding-top:1.015625rem;
+            font-weight:normal;
+        }
+        .menu{
+            color:#3887FC;
+            font-size:0.859375rem;
+            position:absolute;
+            right:0.46875rem;
+            top:1.015625rem;
+        }
+    }
+    #mess-main{
+        flex:1;
+        overflow-x:hidden;
+        >li{
+            height: 2.46875rem;
+            border-bottom:0.015625rem solid #ddd;
+            margin-left:0.46875rem;
+            padding:0.453125rem 0;
+            display:flex;
+            .mess-imgbox{
+                width: 1.90625rem;
+            }
+            .mess-info{
+                flex:1;
+                >h3{
+                    font-size:0.53125rem;
+                }
+            }
+        }
+    }
+    #mess-footer{
+        height:1.546875rem;
+        background-color:#F7F8F9;
+    }
+}

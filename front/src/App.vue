@@ -1,16 +1,17 @@
 <template>
-        <router-view></router-view>   
+  <div id="app">
+    <router-view></router-view>
+  </div>
 </template>
 
 <script>
-export default {
-// ||'请登录/注册账号'
-  name: 'app',
-  data:function(){
-    return {
-      
+    import './App.scss'
+    export default {
+      name: 'app',
+      data () {
+        return {
+          msg: 'Welcome to my domain'
+        }
+      }
     }
-  }
-}
-
 </script>

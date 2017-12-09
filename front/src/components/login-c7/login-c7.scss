@@ -1,0 +1,68 @@
+#Login-c7{
+    height: 100%;
+    display:flex;
+    flex-direction:column;
+    #header{
+        height: 5%;
+        display:flex;
+        position:relative;
+        .left{
+            width:0.9375rem;
+            font-size:0.78125rem;
+            color:#6E95F8;
+            position:absolute;
+            left:0.75rem;
+            top:0.555625rem;
+        }
+    }
+    #main{
+        height:70%;
+        display:flex;
+        flex-direction:column;
+        #imgBox{
+            height: 60%;
+            >img{
+                margin:1.203125rem 0;
+            }
+        }
+        #login{
+            height:40%;
+            margin:0 1.09375rem;
+            position:relative;
+            .el-input__inner{
+                height:0.9375rem;
+                font-size:0.46875rem;
+            }
+            .el-button{
+                width: 100%;
+                height:0.9375rem;
+                font-size:0.46875rem;
+            }
+            .l-forget{
+                width:2.015625rem;
+                font-size:0.4375rem;
+                position:absolute;
+                right:0.15625rem;
+                bottom:2.4375rem;
+                color:#5D91F5;
+            }
+        }
+    }
+    #footer{
+        height:25%;
+        display:flex;
+        flex-direction:column;
+        margin:0 1.09375rem;
+        #ftr-top{
+            flex:1;
+        }
+        #ftr-botton{
+            height:0.9375rem;
+            margin-bottom:0.390625rem;
+            background-color:#fff;
+            color:#6E95F8;
+            font-size:0.46875rem;
+            font-weight:bold;
+        }
+    }
+}
