@@ -7,8 +7,8 @@
     </div>
 </template>
 <script>
-    import './record.scss'
-    import nothing from './no-data.vue'
+    import '../record/record.scss'
+    import nothing from '../no-data/no-data.vue'
     export default{
         data:function(){
         return {

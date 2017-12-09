@@ -1,5 +1,5 @@
 <template>
-    <div class="i_container">
+    <div class="i_container" :username='username'>
         <ul id="mine_header">
             <li><i class="el-icon-arrow-left" @click="i_return"></i></li>
             <li>个人资料</li>
@@ -7,6 +7,7 @@
         </ul>
         <ul id="i_main">
         <li><label>照片</label>
+        
         <el-upload
           class="avatar-uploader"
           action="https://jsonplaceholder.typicode.com/posts/"
@@ -14,9 +15,7 @@
           :on-success="handleAvatarSuccess"
           :before-upload="beforeAvatarUpload">
           <img v-if="imageUrl" :src="imageUrl" class="avatar">
-        </el-upload>
-            <!-- <img
-            size="small" type="primary" src="../../assets/toux.png" alt="" /> -->
+        </el-upload><input type="text" v-show="1!=1"/>
            <i class="el-icon-arrow-right"></i></li>
             <li><label>姓名</label><input type="text" placeholder="请填写" clearable/><i></i></li>
              <li><label>昵称</label><input type="text" placeholder="请填写"/><i></i></li>
@@ -48,14 +47,38 @@
     </div>
 </template>
 <script type="text/javascript">
-import './information.scss'
-import $ from 'jquery' 
+import '../information/information.scss'
+import $ from 'jquery'
+import axios from 'axios'
+import qs from 'qs'
     export default{
         data:function(){
           return {
             imageUrl: '',
             value1: '',
-            value2:''
+            value2:'' 
+          }
+        },
+        computed:{
+          username:{
+            get:function(){         
+              axios({
+                    url: 'http://localhost:666/api/info.php',
+                    method:'post',
+                    data: qs.stringify({username:this.$attrs.username}),
+                    headers: {
+                        'Content-Type': 'application/x-www-form-urlencoded'
+                    }
+                }).then(res=>{
+                  console.log(res)
+                    var len=$('#i_main').find('li').length;
+                    var i=1;
+                    $.each(res.data[0],function(index,item){        
+                        $('#i_main').find('input').eq(i).val(item);
+                        i++;
+                    })
+                })
+            }
           }
         },
         methods:{
@@ -84,4 +107,5 @@ import $ from 'jquery'
           }
         }
     }
+    
 </script>

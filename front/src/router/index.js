@@ -8,11 +8,11 @@ import MessageComponent from '../components/message-c7/message-c7.vue'
 import ServiceComponent from '../components/service-c7/service-c7.vue'
 import ReplyComponent from '../components/reply-c7/reply-c7.vue'
 
-import MineComponent from '../components/sm_mine/mine.vue'
-import RecordComponent from '../components/sm_mine/record.vue'
-import InfoComponent from '../components/sm_mine/information.vue'
-import CollectComponent from '../components/sm_mine/collect.vue'
-import PostComponent from '../components/sm_mine/post.vue'
+import MineComponent from '../components/sm_mine/mine/mine.vue'
+import RecordComponent from '../components/sm_mine/record/record.vue'
+import InfoComponent from '../components/sm_mine/information/information.vue'
+import CollectComponent from '../components/sm_mine/collect/collect.vue'
+import PostComponent from '../components/sm_mine/post/post.vue'
 Vue.use(VueRouter);
 var router = new VueRouter({
     // mode: 'history',

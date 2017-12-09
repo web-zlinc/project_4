@@ -9,8 +9,8 @@
                 <span class="toux" @click="info"></span> 
             </div>    
             <div class="h_bot">
-                <p class="user" :data-id="username">{{username}}</p>
-                <p class="minebtn"><span @click="info">完善信息</span></p>
+                <p class="user">{{username}}</p>
+                <p class="minebtn"><span @click="info()">完善信息</span></p>
             </div> 
         </header>
         <div id="m_main">
@@ -25,23 +25,24 @@
             </ul>
          </div>
     </div>
-    <router-view></router-view>
+    <router-view :username="this.username"></router-view>
 </div>
 </template>
 
 <script>
-import './mine.scss'
+import '../mine/mine.scss'
 import $ from 'jquery'
 
     export default{
 
         data:function(){
             return {
-                mine:true,
-                username:''
+                mine:true
+                // username:''
+
             }
         },
-        // props:['username'],
+        props:['username'],
         methods:{
             info:function(){
                 this.mine=false;
@@ -64,7 +65,7 @@ import $ from 'jquery'
     $(function(){
       var username=$('.user').html();
       if(username==""){
-        $('.user').html('请<a class="login" href="">登录</a>/<a class="register">注册</a>账号')
+        $('.user').html('请<a class="login" href="#/login">登录</a>/<a class="register" href="#/register">注册</a>账号')
       }
     })
      

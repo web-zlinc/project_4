@@ -16,7 +16,7 @@
          margin:200px auto 100px;
             width: 408px;
             height:243px;
-            background:url('../../assets/no-data.png') no-repeat;
+            background:url('../../../assets/no-data.png') no-repeat;
     }
     p{
          font-size:45px;

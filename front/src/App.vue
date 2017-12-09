@@ -1,6 +1,6 @@
 <template>
   <div id="app">
-    <router-view></router-view>
+    <router-view :username="username"></router-view>
   </div>
 </template>
 
@@ -10,7 +10,7 @@
       name: 'app',
       data () {
         return {
-          msg: 'Welcome to my domain'
+          username:'1888888888'
         }
       }
     }
