@@ -7,7 +7,7 @@ import BackgroundComponent from '../components/background/background.vue'
 import UserInforComponent from '../components/userInformation/userInformation.vue'
 import UserAddComponent from '../components/userAdd/userAdd.vue'
 import UserSearchComponent from '../components/userSearch/userSearch.vue'
-import JobsComponent from '../components/jobs/jobs.vue'
+import UserEditComponent from '../components/userEdit/userEdit.vue'
 
 Vue.use(VueRouter);
 
@@ -37,9 +37,9 @@ var router = new VueRouter({
                     name: 'userSearch',
                     component: UserSearchComponent
                 },{
-                    path: '/jobs',
-                    name: 'jobs',
-                    component: JobsComponent
+                    path: '/userEdit',
+                    name: 'userEdit',
+                    component: UserEditComponent
                 }
             ]
         },

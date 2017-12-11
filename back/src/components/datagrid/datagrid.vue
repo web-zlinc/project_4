@@ -4,14 +4,14 @@
             <thead>
                 <tr>
                     <th v-for="(value,key) in dataset[0]" v-if="filter.indexOf(key)<0">{{key}}</th>
-                    <th>edit</th>
-                    <th>delete</th>
+                    <th>编辑</th>
+                    <th>删除</th>
                 </tr>
             </thead>
             <tbody>
                 <tr v-for="(object,index) in dataset">
                     <td v-for="(value,key) in object" v-if="filter.indexOf(key)<0">{{object[key]}}</td>
-                    <td><el-button type="primary" icon="el-icon-edit" @click="edit"></el-button></td>
+                    <td><el-button type="primary" icon="el-icon-edit" @click="edit($event,index)"></el-button></td>
                     <td><el-button type="primary" icon="el-icon-delete" @click="del($event,index)"></el-button></td>
                 </tr>
             </tbody>
@@ -35,6 +35,8 @@
     import './datagrid.scss';
     import axios from 'axios';
     import qs from 'qs';
+    import router from '../../router/index.js';
+
 
     export default{
         name: 'datagrid',
@@ -52,6 +54,8 @@
                     'Content-Type': 'application/x-www-form-urlencoded'
                 }
             }).then(res=>{
+                console.log(res.data)
+
                 this.dataset=res.data;
             })
         },
@@ -61,7 +65,7 @@
                 this.dataset.splice(index, 0);
                 var delItem = this.dataset.splice(index, 1);
                 // 获得删除当前行的uid
-                var uid = delItem[0].uid;
+                var uid = delItem[0].id;
                 console.log(uid)
                 // 发起删除请求
                 axios({
@@ -72,10 +76,18 @@
                         'Content-Type': 'application/x-www-form-urlencoded; charset=UTF-8'
                     }
                 }).then(res=>{
-                     console.log(res)
                     })
-            }
+            },
             // 点击编辑跳转至编辑组件进行编辑
-        }
+            edit:function(event,index){
+                // 需要将当前行中的值存起来
+                var editInfor = this.dataset[index];
+
+                this.$store.commit('editInfor',editInfor);
+                this.$router.push({name:'userEdit'});
+                console.log(this)
+            },
+            
+        },
     }
 </script>

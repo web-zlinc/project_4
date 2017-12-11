@@ -47,7 +47,7 @@
     export default{
         data:function(){
             return {
-                filter:[],
+                filter:['password','email'],
                 y_search_val: '',
                 select: '',
                 show:false
@@ -56,8 +56,8 @@
         methods:{
             y_userSearch:function(){
                 // 相当于将输入框中的值存放在store中
-                this.$store.commit('searchInfor',[this.y_search_val,this.select])
-                this.show = true,
+                this.$store.commit('searchInfor',[this.y_search_val,this.select]);
+                this.show = true;
                 this.$router.push({name :'userSearch'})
                 
             },
