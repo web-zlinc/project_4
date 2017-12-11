@@ -10,7 +10,7 @@
       name: 'app',
       data () {
         return {
-          username:'1888888888'
+          username:''
         }
       }
     }
