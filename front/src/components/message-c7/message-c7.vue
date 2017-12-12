@@ -22,23 +22,36 @@
                 </div>
             </li>
         </ul>
-        <footer id="mess-footer"></footer>
+        <Footer></Footer>
     </div>
 </template>
 
 <script>
     import './message-c7.scss';
+    import Footer from '../footer/footer.vue';
     export default {
         data(){
             return {
                 imgUrl:'src/assets/imgs/mess.png',
                 show: true,
+                username:window.localStorage.getItem('obj'),
             }
         },
         methods:{
             service:function(){
+                 if(this.username == null ){
+                    this.$message({
+                        message:'打开失败，请先登录',
+                        duration:1000,
+                        type:'error',
+                    })
+                    return 
+                }
                 this.$router.push({name:'service'});
             }
+        },
+        components:{
+            Footer,
         }
     }
 </script>

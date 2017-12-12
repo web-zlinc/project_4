@@ -1,24 +1,18 @@
 <template>
 <div>
-    <img src="" alt="" />
-    <p>暂无记录</p>
+    <img class="imghanmei" src="../../../assets/imgs/no-data.png" alt="" />
+    <h5 class="hanmei">暂无记录</h5>
 </div>
     
 </template>
-<script>
-    export default{
-
-    }
-</script>
     <!-- 无数据时显示该组件 -->
-<style type="text/css">
-    img{
+<style>
+    .imghanmei{
          margin:200px auto 100px;
             width: 408px;
             height:243px;
-            background:url('../../../assets/no-data.png') no-repeat;
     }
-    p{
+    .hanmei{
          font-size:45px;
             font-weight:bold;
             text-align:center;

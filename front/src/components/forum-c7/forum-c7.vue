@@ -40,13 +40,14 @@
                 </li>
             </ul> -->
         </main>
-        <footer id="f-footer"></footer>
+        <Footers></Footers>
     </div>
 </template>
 
 <script>
     import './forum-c7.scss';
     import ForumTemp from '../forum-temp/forum-temp.vue';
+    import Footers from '../footer/footer.vue';
     export default {
         data(){
             return {
@@ -86,11 +87,20 @@
                 });
             },
             write:function(){
+                if(this.username == null){
+                    this.$message({
+                        message:'打开失败，请先登录',
+                        duration:1000,
+                        type:'error',
+                    })
+                    return ;
+                }
                 this.$router.push({name:'write'});
             }
         },
         components:{
             ForumTemp,
+            Footers,
         },
     }
 </script>

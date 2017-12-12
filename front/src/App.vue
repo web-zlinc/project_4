@@ -10,6 +10,7 @@
       name: 'app',
       data () {
         return {
+          // username:window.localStorage.getItem('obj'),
         }
       }
     }

@@ -11,11 +11,17 @@
 
     include "DBHelper.php";
 
+    // 获取搜索框中传入的值
+    $id = isset($_POST['uid']) ? $_POST['uid'] : '';
 
-    // $sql = "select id as id,name as 姓名,nickname as 昵称,gender as 性别,age as 年龄 ,city as 所在地,brithday as 生日,education as 教育,major as 专业,phone as 电话,idcard as 身份证,abstract as 签名 from user";
-    $sql = "select * from user";
+    $sql = "delete from jobs where jid = '$id'";
+
     // 调用DBhelper中的query方法
-    $result = query($sql);
-
-    echo json_encode($result,JSON_UNESCAPED_UNICODE)
+    $result = excute($sql);
+    
+     if($result){
+        echo '删除一是条数据';
+    }else{
+        echo 'no';  
+    }
 ?>

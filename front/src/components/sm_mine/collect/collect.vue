@@ -26,7 +26,7 @@
         },
         methods:{
             c_return:function(){
-                this.$router.push({name:'mine'});
+                this.$router.back(-1);
             },
              handleClick(tab, event){
                 console.log(tab, event);

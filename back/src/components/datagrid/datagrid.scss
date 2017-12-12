@@ -1,14 +1,9 @@
-// tbody .el-table__row .cell {
-//     overflow:hidden;
-//     text-overflow:ellipsis;
-//     white-space:nowrap
-// }
+
 .y_datagrid{
     width:100%; 
     overflow:auto;
     tbody tr:nth-child(even){
         background-color:#ddd;
-
     }
 }
 table,th,td{

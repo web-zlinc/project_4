@@ -1,7 +1,7 @@
 <template>
     <div id="service">
         <header class="sev-header">
-            <i class="el-icon-arrow-left sev-back"></i>
+            <i class="el-icon-arrow-left sev-back" @click="back"></i>
             <h3>客服</h3>
         </header>
         <ul class="sev-main">
@@ -86,5 +86,10 @@
         data(){
             return {}
         },
+        methods:{
+            back(){
+                this.$router.push({name:'message'})
+            }
+        }
     }
 </script>

@@ -15,3 +15,6 @@
     float: right;
     margin-right:50px;
 }
+tbody tr:nth-child(even){
+    background-color:#ddd;
+}

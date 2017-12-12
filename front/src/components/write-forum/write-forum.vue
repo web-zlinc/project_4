@@ -79,6 +79,7 @@
                         console.log(res);
                     })   
                 }
+                this.$router.push({name:'forum'});
             }
         },
         mounted(){

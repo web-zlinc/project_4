@@ -14,9 +14,9 @@
     // 获取搜索框中传入的值
     $uid = isset($_POST['uid']) ? $_POST['uid'] : '';
 
-    $sql = "delete from user where  uid = '$uid'";
+    $sql = "delete from user where  id = '$uid'";
 
-    // 调用DBhelper中的query方法
+    // 调用DBhelper中的excute方法
     $result = excute($sql);
     
      if($result){

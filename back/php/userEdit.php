@@ -23,16 +23,15 @@
     $phone = isset($_POST['phone']) ? $_POST['phone'] : '';
     $idcard = isset($_POST['idcard']) ? $_POST['idcard'] : '';
     $abstract = isset($_POST['abstract']) ? $_POST['abstract'] : '';
+    $id = isset($_POST['id']) ? $_POST['id'] : '';
 
-    $sql = "insert into user(name,nickname,gender,age,city,brithday,education,major,phone,idcard,abstract)  values('$name','$nickname','$gender','$age','$city','$brithday','$education','$major','$phone','$idcard','$abstract')";
-    // $sql = "insert into user(name)  values('$name')";
-    // $sql = "select * from user where name='$name' ";
+   
+    $sql="update user set name='$name',nickname='$nickname',gender='$gender',age='$age',city='$city',brithday='$brithday',education='$education',major='$major',phone='$phone',idcard='$idcard',abstract='$abstract' where id='$id'";
     // 调用DBhelper中的excute方法
     $result = excute($sql);
     
-    // echo json_encode($result,JSON_UNESCAPED_UNICODE);
     if($result){
-        echo '保存成功';
+        echo '修改成功';
     }else{
         echo 'no';  
     }
