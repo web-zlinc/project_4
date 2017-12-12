@@ -65,7 +65,7 @@
            edtSave: function(){
 
                 axios({
-                    url:"http://localhost:2277/php/jobsEdit.php",
+                    url:"http://10.3.135.251:2277/php/jobsEdit.php",
                     method: 'post',
                     data: qs.stringify({
                         company: this.dataset[0].company,

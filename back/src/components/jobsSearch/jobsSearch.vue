@@ -53,7 +53,7 @@
             // console.log(this.dataform.company)
             
             axios({
-                url:"http://localhost:2277/php/jobsSearch.php",
+                url:"http://10.3.135.251:2277/php/jobsSearch.php",
                 method: 'post',
                 // data: qs.stringify({jian:this.pro[1] , zhi: this.pro[0]}),
                 data: qs.stringify({key: this.pro[1] , val: this.pro[0]}),
