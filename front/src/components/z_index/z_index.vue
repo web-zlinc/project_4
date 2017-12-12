@@ -1,16 +1,16 @@
 <template>
     <div id="container">
         <div class="z_top">
-            <span>全国</span>
-            <i class='io el-icon-arrow-down'></i>
+            <span @click="showcity">全国</span>
+            <i class='io el-icon-arrow-down' @click="showcity"></i>
             <i class="it el-icon-search"></i>
             <input type="text" placeholder="500强机会" @click="skip"/>
         </div>
         <div class="z_banner">
 
             <el-carousel indicator-position="outside">
-                <el-carousel-item v-for="item in 6" :key="item">
-                    <img src="../../assets/zb1.png"/>
+                <el-carousel-item v-for="idx in 6" :key="idx">
+                    <img :src="'./src/assets/zb'+idx+'.png'"/>
                 </el-carousel-item>
             </el-carousel>
         </div>
@@ -46,7 +46,7 @@
                         </p>
                         <p class="two">{{obj.company}}</p>
                         <p class="three">
-                            <span class="t1 el-icon-location-outline">{{obj.site.slice(0,2)}}</span> 
+                            <span class="t1 el-icon-location-outline">{{obj.site.slice(0,4)}}</span> 
                             <span class="t2 el-icon-time">{{obj.rate}}</span>
                             <span class="t3">{{obj.salary}}</span>
                         </p>
@@ -72,8 +72,8 @@
         data:function(){
             return {
                 dataset: [],
-                id:''
-
+                id:'',
+                show:false
             }
         },
         components:{
@@ -88,12 +88,15 @@
                     name: 'details',
                     query:idx
                 });
+            },
+            showcity(){
+                this.$router.push({name:'city'})
             } 
 
         },
         mounted(){
             axios({
-                url:'http://localhost:3333/php/zindex.php',
+                url:'http://localhost:3333/api/zindex.php',
                 method: 'post',
                 data: qs.stringify({recommend:'true'}),
                 headers: {
@@ -113,7 +116,7 @@
   .el-carousel__item img{
     color: #475669;
     font-size: 18px;
-    opacity: 0.75;
+   
     line-height: 300px;
     margin: 0;
   }

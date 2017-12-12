@@ -44,22 +44,63 @@
             change:{
                 get(){
                     var jtype=this.$parent.val;
-                    axios({
-                        url:'http://localhost:3333/php/zindex.php',
-                        method: 'post',
-                        data: qs.stringify({jtype:jtype}),
-                        headers: {
-                            'Content-Type': 'application/x-www-form-urlencoded'
-                        }
-                    }).then(res => {
-                        this.datalist = res.data;
-                    })
-                },
-                set(){
+                    var site=this.$parent.site;
+                    var salary=this.$parent.salary;
+                    var degree=this.$parent.degree;
+                    if(site){
+                        axios({
+                            url:'http://localhost:3333/api/zindex.php',
+                            method: 'post',
+                            data: qs.stringify({site:site}),
+                            headers: {
+                                'Content-Type': 'application/x-www-form-urlencoded'
+                            }
+                        }).then(res => {
+                            this.datalist = res.data;
+                        })
+                    }
+                    else if(salary){
+                        axios({
+                            url:'http://localhost:3333/api/zindex.php',
+                            method: 'post',
+                            data: qs.stringify({salary:salary}),
+                            headers: {
+                                'Content-Type': 'application/x-www-form-urlencoded'
+                            }
+                        }).then(res => {
+                            this.datalist = res.data;
+                        })
+                    }else if(degree){
+                        axios({
+                            url:'http://localhost:3333/api/zindex.php',
+                            method: 'post',
+                            data: qs.stringify({degree:degree}),
+                            headers: {
+                                'Content-Type': 'application/x-www-form-urlencoded'
+                            }
+                        }).then(res => {
+                            this.datalist = res.data;
+                        })
+                    }else{
+                        axios({
+                            url:'http://localhost:3333/api/zindex.php',
+                            method: 'post',
+                            data: qs.stringify({jtype:jtype}),
+                            headers: {
+                                'Content-Type': 'application/x-www-form-urlencoded'
+                            }
+                        }).then(res => {
+                            this.datalist = res.data;
+                        })
+                    }
                     
                 }
             }
+        },
+        mounted(){
+            this.change;
         }
+
         
     }
 </script>

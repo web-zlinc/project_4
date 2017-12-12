@@ -89,7 +89,8 @@
                         'Content-Type': 'application/x-www-form-urlencoded; charset=UTF-8'
                     }
                 }).then(res=>{
-                    })
+                    this.successPro(_uid);
+                })
             },
             // 点击编辑跳转至编辑组件进行编辑
             edit:function(event,index){
@@ -102,7 +103,7 @@
                     this.$router.push({name:'userEdit'});
 
                 }else if(routePath === '/jobs'){
-                    
+
                     let jobsEditInfor = this.dataset[index];
                     this.$store.commit('jobsEditInfor',jobsEditInfor);
                     this.$router.push({name: 'jobsEdit'});
@@ -112,6 +113,13 @@
                 // 需要将当前行中的值存起来
 
             },
+            successPro: function(a){
+                this.$notify({
+                    title: '删除成功',
+                    message: `删除了当前表格中id为${a}的数据`,
+                    type: 'success'
+                });
+            }
             
         },
     }

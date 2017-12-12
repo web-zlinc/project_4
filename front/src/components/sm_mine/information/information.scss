@@ -1,11 +1,8 @@
 body .i_container{
     height: 100%;
     display:flex;
+    background-color:#F5F5F5;
     flex-direction:column;
-     .el-popper{
-                left:393px!important;
-                
-            }
     #mine_header{
         position:flex;
         top:0;
@@ -38,12 +35,14 @@ body .i_container{
         flex:1;
         overflow:auto;
         background-color:#F5F5F5;
+
         li{
+            position:relative;
             background-color:#fff;
             display:flex;
             font-size:30px;
             padding:30px 30px;
-             border-bottom:1px solid #EAEAEA;
+             border-bottom:1px solid #EAEAEA; 
              label{
                 flex:1.7;
              }
@@ -52,6 +51,7 @@ body .i_container{
                 border:0;
                 font-size:30px;
                 text-align:right;
+                background-color:#fff;
              }
             img{
                
@@ -70,7 +70,7 @@ body .i_container{
                 width: 110px;
                 height: 110px;
                 border-radius:50%;
-                background:url('../../../assets/toux.png') no-repeat;
+                background:url('../../../assets/imgs/toux.png') no-repeat;
                 background-position:center;
                background-size:cover;
             }

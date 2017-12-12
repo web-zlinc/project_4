@@ -25,7 +25,7 @@
         }
     }
     #zs_nav{
-        ul{
+        >ul{
             height: 98px;
             display:flex;
             .sa{
@@ -38,20 +38,39 @@
                     right:8px;
                     font-size:22px;
                 }
+                >ul{
+                    position:absolute;
+                    display:none;
+                    left: 0;
+                    top:100%;
+                    width:100%;
+                    background:#fff;
+                    >li{
+                        font-size:24px;
+                        float:none;
+                        line-height:30px;
+                        padding:20px 0 20px 10px;
+                        border-bottom:1px solid #ddd;
+                        &:hover{
+                            background:#ccc;
+                        }
+                    }
+                }
+                
             }
-            li:last-child{
+            >li:last-child{
                 width: 78px;
                 border:1px solid #ccc;
             }
-            li{
+            >li{
                display:flex;
+               
                justify-content:center;
                align-items:center;
                a{
                     font-size:30px;
                     color:#000;
                }
-               
             }
         }
     }

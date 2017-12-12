@@ -1,11 +1,11 @@
 $btcolor:#188AF9;
 body{
     height: 100%;
-    background-color:#F5F5F5;
     display:flex;
     flex-direction:column;
     .mine_content{
         height: 100%;
+        background-color:#F5F5F5;
     }
 }
 #m_header{
@@ -18,7 +18,7 @@ body{
             width: 100%;
             height: 100%;
             display:block;
-            background:url('../../../assets/bgpit.png') no-repeat;
+            background:url('../../../assets/imgs/bgpit.png') no-repeat;
             background-size:cover;
             background-position:center;
         }
@@ -63,7 +63,7 @@ body{
         height: 128px;
         width: 128px;
         border-radius:50%;
-        background:url('../../../assets/toux.png') no-repeat;
+        background:url('../../../assets/imgs/toux.png') no-repeat;
     }
 }
 #m_main{
