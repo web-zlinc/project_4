@@ -1,9 +1,9 @@
 <?php
 /**
  * @Author: Marte
- * @Date:   2017-12-09 11:08:38
+ * @Date:   2017-12-10 15:43:46
  * @Last Modified by:   Marte
- * @Last Modified time: 2017-12-09 11:41:13
+ * @Last Modified time: 2017-12-10 15:44:27
  */
     header('Access-Control-Allow-Origin:*');
 
@@ -11,12 +11,9 @@
 
     $phone = isset($_POST["phone"]) ? $_POST["phone"] : '';
 
-    $password = isset($_POST["password"]) ? $_POST["password"] : '';
-
-    $sql = "select * from user where phone = $phone and  password = $password";
+    $sql = "select * from user where phone = $phone";
 
     $result = query($sql);
 
     echo json_encode($result,JSON_UNESCAPED_UNICODE);
-
 ?>

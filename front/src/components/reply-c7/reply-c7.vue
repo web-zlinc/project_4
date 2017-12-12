@@ -6,8 +6,9 @@
             <h3>我回复的</h3>
         </header>
         <main class="rep-main">
-            <router-view name="repMine"></router-view>
-            <router-view name="mineRep"></router-view>
+            <!-- <router-view></router-view> -->
+            <!-- <RepchildComponent></RepchildComponent> -->
+            <ReptempComponent></ReptempComponent>
         </main>
         <footer class="rep-footer"></footer>
     </div>
@@ -15,13 +16,15 @@
 
 <script>
     import './reply-c7.scss';
-    import RepChildrenComponent from '../rep-children/rep-children.vue'
+    import RepchildComponent from '../rep-children/rep-children.vue'
+    import ReptempComponent from '../rep-children1/rep-children1.vue';
     export default {
         data(){
             return {}
         },
-        conponents:{
-            repMine:RepChildrenComponent
+        components:{
+            RepchildComponent,
+            ReptempComponent
         }
     }
 </script>

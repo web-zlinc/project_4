@@ -1,0 +1,70 @@
+#write{
+    height:100%;
+    display:flex;
+    flex-direction:column;
+    .wrthead{
+        position:relative;
+        >h1{
+            font-size:0.5625rem;
+            padding:1.03125rem 0 0.4375rem 0;
+            text-align:center;
+            color:#40516B;
+            background-color:#F7F8F9;
+        }
+        .wback{
+            position:absolute;
+            left:0.25rem;
+            top:1.01125rem;
+            font-size:0.84375rem;
+            color:#3888FD;
+            font-weight:bold;
+        }
+        .suc{
+            position:absolute;
+            right:0.25rem;
+            top:1.01125rem;
+            font-size:0.5625rem;
+            color:#3888FD;
+        }
+    }
+    .wrtmain{
+        flex:1;
+        .wrtinfo{
+            display:flex;
+            padding:0.15625rem;
+            position:relative;
+            >img{
+                width:1.875rem;
+                height:1.875rem;
+                border-radius:50%;
+            }
+            .wrtname{
+                font-size:0.625rem;
+                padding-left:0.9375rem;
+                line-height:1.875rem;
+            }
+            #sel{
+                flex:1;
+                .el-select{
+                    width:3.90625rem;
+                    float:right;
+                    padding-top:0.28125rem;
+                }
+            }
+        }
+        .el-input{
+            padding:0.15625rem 0.3125rem;
+            .el-input__inner{
+                height: 1.09375rem;
+                font-size:0.625rem
+            }
+        }
+        .el-textarea{
+            padding:0.15625rem 0.3125rem;
+            .el-textarea__inner{
+                height: 6.25rem;
+                font-size:0.625rem;
+            }
+        }
+    }
+}

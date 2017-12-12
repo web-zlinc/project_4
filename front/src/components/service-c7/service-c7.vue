@@ -70,7 +70,7 @@
                 </p>
             </li>
         </ul>
-        <el-input v-model="input" placeholder="请输入内容..."></el-input>
+        <el-input placeholder="请输入内容..."></el-input>
         <dl class="sev-footer">
             <dt class="el-icon-phone"></dt>
             <dt class="el-icon-sort"></dt>
