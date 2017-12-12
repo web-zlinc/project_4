@@ -1,0 +1,62 @@
+#container{
+    height: 100%;
+    display:flex;
+    background:#fff;
+    flex-direction:column;
+    #zl_main{
+        flex:1;
+        display:flex;
+        ul{
+            flex:1;
+            overflow:auto;
+            flex-direction:column;
+            padding:0 34px;
+            li{
+                height: 16.66%;
+                display:flex;
+                padding:30px 0px;
+                border-bottom:1px solid #ccc;
+                img{
+                    width: 120px;
+                    height: 120px;
+                    margin-right:20px;
+                }
+                .zlmr{
+                    display:flex;
+                    flex-direction:column;
+                    flex:1;
+                    .one{
+                        .ol{
+                            float:left;
+                            font-size:32px;
+                            color:#5A647A;
+                        }
+                        .or{
+                            float:right;
+                            font-size:20px;
+                            color:#BDC9DA;
+                        }
+                    }
+                    .two{
+                        font-size:24px;
+                        color:#BDC9DA;
+                        margin:10px 0;
+                    }
+                    .three{
+                        span{
+                            font-size:24px;
+                        }
+                        .tl{
+                            float:left;
+                            color:#BDC9DA;
+                        }   
+                        .tr{
+                            float:right;
+                            color:#F96969;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
