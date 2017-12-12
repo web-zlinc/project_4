@@ -16,7 +16,7 @@
 
     $sql = "delete from user where  id = '$uid'";
 
-    // 调用DBhelper中的query方法
+    // 调用DBhelper中的excute方法
     $result = excute($sql);
     
      if($result){

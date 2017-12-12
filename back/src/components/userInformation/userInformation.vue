@@ -55,6 +55,7 @@
         },  
         methods:{
             y_userSearch:function(){
+                this.show = true;
                 // 相当于将输入框中的值存放在store中
                 this.$store.commit('searchInfor',[this.y_search_val,this.select]);
                 this.show = true;
@@ -62,6 +63,7 @@
                 
             },
             y_userAdd:function(){
+                this.show = true;
                 this.$router.push({name :'userAdd'})
             }
         },

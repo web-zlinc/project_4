@@ -27,7 +27,7 @@
 
    
     $sql="update user set name='$name',nickname='$nickname',gender='$gender',age='$age',city='$city',brithday='$brithday',education='$education',major='$major',phone='$phone',idcard='$idcard',abstract='$abstract' where id='$id'";
-    // 调用DBhelper中的query方法
+    // 调用DBhelper中的excute方法
     $result = excute($sql);
     
     if($result){

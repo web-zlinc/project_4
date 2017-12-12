@@ -27,7 +27,7 @@
     $sql = "insert into user(name,nickname,gender,age,city,brithday,education,major,phone,idcard,abstract)  values('$name','$nickname','$gender','$age','$city','$brithday','$education','$major','$phone','$idcard','$abstract')";
     // $sql = "insert into user(name)  values('$name')";
     // $sql = "select * from user where name='$name' ";
-    // 调用DBhelper中的query方法
+    // 调用DBhelper中的excute方法
     $result = excute($sql);
     
     // echo json_encode($result,JSON_UNESCAPED_UNICODE);
