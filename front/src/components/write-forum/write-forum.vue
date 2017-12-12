@@ -6,9 +6,9 @@
             <h3 class="suc" @click="success">发帖</h3>
         </header>
         <main class="wrtmain">
-            <h2 class="wrtinfo">
-                <img src="../../assets/imgs/portrait.jpg" />
-                <p class="wrtname">Eddie</p>
+            <h2 class="wrtinfo" v-for="(obj,index) in data" :key="index" :ref="index">
+                <img :src="obj.portrait" />
+                <p class="wrtname" v-text="obj.nickname"></p>
                 <div id="sel">
                     <el-select v-model="value" placeholder="请选择">
                     <el-option
@@ -42,6 +42,8 @@
                 textarea:'',
                 dataset:['hot','low','help','headline','strategy'],
                 value:'',
+                username:window.localStorage.getItem('obj'),
+                data:[],
             }
         },
         methods:{
@@ -49,17 +51,48 @@
                 this.$router.push({name:'forum'})
             },
             success:function(){
-                axios({
-                    url:'http://localhost:1232/inserWrt.php',
-                    data: qs.stringify({header:this.header,details:this.textarea,type:this.value}),
-                    method: 'post',
-                    headers: {
-                        'Content-Type': 'application/x-www-form-urlencoded'
-                    }
-                }).then(res => {
-                    console.log(res);
-                })
+                if(this.header == '' || this.textarea =='' ){
+                    this.$alert('主题或者主题内容不能为空', '提示信息', {
+                        confirmButtonText: '确定',
+                        callback: action => {
+                        this.$message({
+                          type: 'success',
+                          message: `点击确定`
+                        });
+                      }
+                    });
+                }else{
+                    axios({
+                        url:'http://localhost:1232/inserWrt.php',
+                        data: qs.stringify({
+                            header:this.header,
+                            details:this.textarea,
+                            type:this.value,
+                            phone:this.username,
+                            nickname:this.data[0].nickname,
+                        }),
+                        method: 'post',
+                        headers: {
+                            'Content-Type': 'application/x-www-form-urlencoded'
+                        }
+                    }).then(res => {
+                        console.log(res);
+                    })   
+                }
             }
+        },
+        mounted(){
+            axios({
+                url:'http://localhost:1232/check-c7.php',
+                data: qs.stringify({phone:this.username}),
+                method: 'post',
+                headers: {
+                    'Content-Type': 'application/x-www-form-urlencoded'
+                }
+            }).then(res => {
+                this.data = res.data;
+                console.log(this.data)
+            })
         }
     }
 </script>

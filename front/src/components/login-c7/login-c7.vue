@@ -46,11 +46,11 @@
                         'Content-Type': 'application/x-www-form-urlencoded'
                     }
                 }).then(res => {
-                    console.log(res.data[0].uid);
+                    console.log(res.data[0].phone);
                     //传入window.localStorage.setItem保存信息id的值
-                    window.localStorage.setItem('obj',res.data[0].uid);
+                    window.localStorage.setItem('obj',res.data[0].phone);
                     //跳入首页
-                    // this.$router.push({name:index})
+                    this.$router.push({name:'forum'})
                 })
             },
             register(){

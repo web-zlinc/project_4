@@ -35,7 +35,9 @@
                 mobile:'',
                 obj:'获取验证码',
                 code:'',
-                password:''
+                password:'',
+                count:300,
+                checkcode:'',
             }
         },
         methods:{
@@ -76,14 +78,7 @@
                     })
                 }
             },
-
             getCode(){
-                // let first = this.randomNumber(0,9);
-                // let third = this.randomNumber(0,9)
-                // let second = String.fromCharCode(this.randomNumber(0,25)+65);
-                // let fourth = String.fromCharCode(this.randomNumber(0,25)+65);
-                // return this.obj = first + second + third + fourth;
-                console.log(this);
                 var date = new Date();
                 var year = date.getFullYear();
                 var mon = date.getMonth() + 1;
@@ -95,6 +90,8 @@
                 var token = '4fc2b75b7b53426e824ae0c24028d69f';
                 var times =  year + mon + dates + hour + min + sec;
                 var md55 = accountSid + token + times;
+                var codes = this.randomNumber(999999,100000);
+                this.checkcode = codes;
                 axios({
                     url:'https://api.miaodiyun.com/20150822/industrySMS/sendSMS',
                     data: qs.stringify({
@@ -102,7 +99,7 @@
                         to:this.mobile,
                         timestamp:times,
                         sig:md5(md55),
-                        templateid:113994847,
+                        smsContent:'【胖友科技】您的验证码为'+ codes +'，请于5分钟内正确输入，如非本人操作，请忽略此短信。'
                     }),
                     method: 'post',
                     headers: {
@@ -111,6 +108,18 @@
                 }).then(res => {
                     console.log(res);
                 })
+
+                var timer = setInterval(function(){
+                    this.count--;
+                    if(this.count <= 0 ){
+                        clearInterval(timer);
+                        this.count = 300;
+                        this.obj = '获取验证码';
+                        return;
+                    }
+                    this.obj = this.count;
+                }.bind(this),1000)
+
             },
             verifyCode(){
                 this.$message({
@@ -118,7 +127,7 @@
                   type: 'success'
                 });
                 // 验证码相同则将数据写进数据库
-                if(this.obj == this.code){
+                if(this.checkcode == this.code){
                     axios({
                         url:'http://localhost:1232/register-c7.php',
                         method: 'post',

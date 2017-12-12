@@ -55,6 +55,7 @@
                 together:require('../../assets/imgs/toggeter.png'),
                 type:"hot",
                 num:1,
+                username:window.localStorage.getItem('obj'),
             }
         },
         methods :{
@@ -79,7 +80,6 @@
                 this.num = 5;
             },
             EneDet:function(e){
-                console.log(e.dataset.id);
                 //获取当前id
                 var id = e.dataset.id
                 this.$router.push({path:'/forumdetails/' + id
