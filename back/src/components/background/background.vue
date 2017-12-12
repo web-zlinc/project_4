@@ -34,6 +34,7 @@
     import userInformation from '../userInformation/userInformation.vue';
     import userAdd from '../userAdd/userAdd.vue';
     import userSearch from '../userSearch/userSearch.vue';
+    import jobsSearch from '../jobsSearch/jobsSearch.vue'
 
     import '../../router/index.js'
 
@@ -58,6 +59,7 @@
         userInformation:userInformation,
         userAdd:userAdd,
         userSearch:userSearch,
+        jobsSearch:jobsSearch
 
       }
       

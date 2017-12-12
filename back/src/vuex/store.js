@@ -7,7 +7,9 @@ const store = new Vuex.Store({
      // 定义状态
      state: {
         pro: [],
-        edit:''
+        edit:'',
+        data: ''
+
      },
     mutations:{
         searchInfor(state,msg){
@@ -16,6 +18,9 @@ const store = new Vuex.Store({
         editInfor(state,msg1){
             state.edit = msg1
         },
+        jobsEditInfor(state, dataId) {
+            state.data = dataId
+        }
     }
 })
 export default store

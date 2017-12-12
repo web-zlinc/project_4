@@ -61,16 +61,30 @@
         methods:{
             // 点击删除要删除当前tr的数据
             del:function(event,index){
-                this.dataset.splice(index, 0);
+
                 var delItem = this.dataset.splice(index, 1);
+                this.dataset.splice(index, 0);
+                // 根据路由对相应的表格进行删除操作
+                let _url;
+                let routePath = this.$route.path;
+                if(routePath === '/userInformation'){
+                    _url = "http://10.3.135.246:333/back/php/userRemove.php";
+                    var _uid = delItem[0].id;
+                }else if(routePath === '/jobs'){
+                    _url = "http://localhost:2277/php/jobsRemove.php";
+                    var _uid = delItem[0].jid;
+                }
+
                 // 获得删除当前行的uid
-                var uid = delItem[0].id;
-                console.log(uid)
+                // var uid = delItem[0].id;
+                // console.log(delItem)
+                console.log(_uid)
+                console.log(_url)
                 // 发起删除请求
                 axios({
-                    url:"http://10.3.135.246:333/back/php/userRemove.php",
+                    url: _url,
                     method: 'post',
-                    data: qs.stringify({uid:uid}),
+                    data: qs.stringify({uid:_uid}),
                     headers: {
                         'Content-Type': 'application/x-www-form-urlencoded; charset=UTF-8'
                     }
@@ -79,11 +93,24 @@
             },
             // 点击编辑跳转至编辑组件进行编辑
             edit:function(event,index){
-                // 需要将当前行中的值存起来
-                var editInfor = this.dataset[index];
 
-                this.$store.commit('editInfor',editInfor);
-                this.$router.push({name:'userEdit'});
+                let routePath = this.$route.path;
+                if(routePath === '/userInformation'){
+
+                    var editInfor = this.dataset[index];
+                    this.$store.commit('editInfor',editInfor);
+                    this.$router.push({name:'userEdit'});
+
+                }else if(routePath === '/jobs'){
+                    
+                    let jobsEditInfor = this.dataset[index];
+                    this.$store.commit('jobsEditInfor',jobsEditInfor);
+                    this.$router.push({name: 'jobsEdit'});
+                    
+                }
+
+                // 需要将当前行中的值存起来
+
             },
             
         },
