@@ -1,6 +1,6 @@
 <template>
     <div class="rec_content">
-    <div id="r_header"><p><i class="el-icon-arrow-left" @click="p_return"></i>我的帖子</p></div>
+    <div id="r_header"><p><i class="el-icon-arrow-left" @click="p_return"></i>{{posts}}</p></div>
         <main id="r_main">
             <nothing v-if="nodata"></nothing>
         </main>
@@ -12,7 +12,8 @@
     export default{
         data:function(){
         return {
-            nodata:true
+            nodata:true,
+            posts:'我的帖子'
         }
         },
         methods:{

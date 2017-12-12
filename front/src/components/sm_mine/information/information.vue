@@ -7,6 +7,7 @@
         </ul>
         <ul id="i_main">
         <li><label>照片</label>
+         <!--  --><!-- :auto-upload="false" -->
         <el-upload
           class="avatar-uploader"
           action="https://jsonplaceholder.typicode.com/posts/"
@@ -17,25 +18,26 @@
         </el-upload>
         <input type="text" v-show="1!=1"/>
         <input type="text" v-show="1!=1"/>
-
            <i class="el-icon-arrow-right"></i></li>
-            <li><label>姓名</label><input type="text" placeholder="请填写" clearable/><i></i></li>
+            <li><label>姓名</label><input type="text" class="name" placeholder="请填写" clearable/><i></i></li>
              <li><label>昵称</label><input type="text" placeholder="请填写"/><i></i></li>
               <li><label>一句话介绍</label><input type="text" placeholder="请填写"/><i></i></li>
-            <li><label>性别</label><input type="text" placeholder="请选择" /><i class="el-icon-arrow-right"></i></li>
+            <li><label>性别</label><input class="el-dropdown-link" type="text" placeholder="请选择" />   
+            <i class="el-icon-arrow-right gender"></i></li>
             <li><label>年龄</label><input type="text" placeholder="请选择" /><i class="el-icon-arrow-right"></i></li>
             <li><label>现居城市</label><input type="text" placeholder="请填写"/><i></i></li>
             <li><label>生日</label>
             <el-date-picker
               v-model="value1"
               type="date"
+              align="right"
               placeholder="请选择">
             </el-date-picker>
        
             <i class="el-icon-arrow-right"></i></li>
             <li><label>学历</label><input type="text" placeholder="请选择"/><i class="el-icon-arrow-right"></i></li>
             <li><label>专业</label><input type="text" placeholder="请填写" clearable/><i></i></li>
-            <li><label>手机号码</label><input class="phone" type="text" placeholder="请填写" clearable /><i></i></li>
+            <li><label>手机号码</label><input class="phone" type="text" placeholder="请填写" clearable disabled="true" /><i></i></li>
             <li><label>邮箱地址</label><input type="text" placeholder="请填写" clearable/><i></i></li>
             <li v-if="showid"><label>身份证号</label><input type="text" placeholder="请填写" clearable /><i></i></li>
         </ul>
@@ -58,33 +60,28 @@ import qs from 'qs'
         },
         computed:{
           username:{
-            get:function(){ 
-              // 判断为修改时，显示身份证号
-              if(this.$attrs.username==''){
+            get:function(){
+              // 判断为首次添加信息时，显示身份证号
+              if($('.name').val()==''){
                   this.showid=true;
-              }else{
+              }
                   // 显示用户信息
-                   axios({
+                axios({
                     url: 'http://localhost:666/api/info.php',
                     method:'post',
                     data: qs.stringify({username:this.$attrs.username}),
                     headers: {
                         'Content-Type': 'application/x-www-form-urlencoded'
                     }
-                }).then(res=>{
-                    var len=$('#i_main').find('input').length;
-                    var i=0;
-                    $.each(res.data[0],function(index,item){
-                        i++;
-                        // if(index>1){
-                          $('#i_main').find('input').eq(i).val(item);
-                        
-                        // }        
-                        
-                    })
-                })
-              }    
-           
+                }).then(res=>{               
+                      var len=$('#i_main').find('input').length;
+                      var i=0;
+                       $.each(res.data[0],function(index,item){
+                          i++;                      
+                            $('#i_main').find('input').eq(i).val(item);                     
+                      })                
+                   
+                })        
             }
           }
         },
@@ -95,6 +92,8 @@ import qs from 'qs'
             },
             i_save:function(){ 
                 var arr=[];
+                var imgurl=$('.avatar').attr('src')||'';
+                arr.push(imgurl);
                 var $lis=$('#i_main').find('input');
                 for(var i=3;i<$lis.length;i++){
                   if($lis.eq(i).val()==''){
@@ -105,7 +104,7 @@ import qs from 'qs'
                 } 
                 // 更新信息
                 if(this.$attrs.username!=" "){
-                  var newuser=JSON.stringify(arr);console.log(newuser)
+                  var newuser=JSON.stringify(arr);
                   axios({
                       url: 'http://localhost:666/api/info.php',
                       method:'post',
@@ -115,7 +114,7 @@ import qs from 'qs'
                       }
                   }).then(res=>{                 
                         this.$message('你的资料已保存成功！');
-                        this.$router.push({name:'mine'});   
+                        // this.$router.push({name:'mine'});   
                   })
                 }
              
@@ -139,16 +138,16 @@ import qs from 'qs'
             this.imageUrl = URL.createObjectURL(file.raw);
             }, 
               beforeAvatarUpload(file) {
-            const isJPG = file.type === 'image/jpeg';
-            const isLt2M = file.size / 1024 / 1024 < 2;
-
+              const isJPG = file.type === 'image/jpeg';
+              const isLt2M = file.size / 1024 / 1024 < 2;
+              
             if (!isJPG) {
               this.$message.error('上传头像图片只能是 JPG格式!');
             }
             if (!isLt2M) {
               this.$message.error('上传头像图片大小不能超过 2MB!');
             }
-            return isJPG && isLt2M;
+              return isJPG && isLt2M;
           }
         }
     }

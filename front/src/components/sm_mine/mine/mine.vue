@@ -9,8 +9,7 @@
                 <span class="toux" @click="info"></span> 
             </div>    
             <div class="h_bot">
-                <p class="user" v-if='user'>{{username}}</p>
-                <p v-if='!user'>请<router-link to="/login">登录</router-link>/<router-link to="/register">注册</router-link>账号</p>
+                <p class="user" v-showIf>{{username}}</p>              
                 <p class="minebtn"><span @click="info()">完善信息</span></p>
             </div> 
         </header>
@@ -37,11 +36,20 @@ import $ from 'jquery'
     export default{
         data:function(){
             return {
-                user:false
+              
             }
         },
         props:['username'],
+        directives:{
+            showIf:function(ele){
+              var p=`<p class="nobody">请<a href="/#/login">登录</a>/<a href="/#/register">注册</a>账号</p>`;   
+                if($(ele).html()<1){
+                    $(ele).html(p);
+                }
+            }
+        },
         methods:{
+
             info:function(){
                 this.$router.push({name:'info'})
             },
@@ -59,6 +67,12 @@ import $ from 'jquery'
             }
         }
     }
-     
+    
+    $(function(){
+       // if($('.user').html()<1){
+       //     var p=`<p class="nobody">请<a href="/#/login">登录</a>/<a href="/#/register">注册</a>账号</p>`;
+       //    　$(p).replaceAll('.user');
+       // }
+    })
     
 </script>
