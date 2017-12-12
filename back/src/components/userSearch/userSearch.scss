@@ -1,0 +1,20 @@
+.y_toolbar{
+    height: 80px;
+    // width: 100%;
+}
+.y_toolbar li{
+    float: left;
+}
+.el-select .el-input {
+    width: 130px;
+  }
+.input-with-select .el-input-group__prepend {
+    background-color: #fff;
+}
+.y_search{
+    float: right;
+    margin-right:50px;
+}
+tbody tr:nth-child(even){
+    background-color:#ddd;
+}

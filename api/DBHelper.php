@@ -58,6 +58,9 @@
         //初始化连接
         $conn = connect();
         //执行 sql 脚本，也叫数据库脚本，返回一个结果集（对象）
+
+        $conn->set_charset('utf8');
+        
         $result = mysqli_query($conn, $sql);
         //定义了一个数组
         $jsonData = array();           
@@ -103,5 +106,22 @@
 
     // excute($insert);
     // query($sql);
+    
+    //执行增加数据方法
+    function add($sql){
+        //初始化连接
+        $conn = connect();
 
+        //防止编码
+        $conn->set_charset('utf8');
+
+        $result = mysqli_query($conn, $sql);
+
+        if($result) {
+            echo "ok";
+        } else {
+            // 写入失败
+            echo "Error: " . $sql . "<br>" . $conn->error;
+        }
+    }
 ?>

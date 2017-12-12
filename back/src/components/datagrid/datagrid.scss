@@ -1,0 +1,12 @@
+
+.y_datagrid{
+    width:100%; 
+    overflow:auto;
+    tbody tr:nth-child(even){
+        background-color:#ddd;
+    }
+}
+table,th,td{
+    border:1px solid #ccc;
+    font-size:10px;
+}

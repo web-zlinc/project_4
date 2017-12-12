@@ -1,0 +1,38 @@
+#container{
+    .main{
+        h2{
+            font-size:30px;
+            background:#ddd;
+            margin-bottom:10px;
+        }
+        .hot{
+            padding-left:10px;
+            .allhot{
+                color:#000;
+                padding:0 10px;
+                line-height:40px;
+                margin:0 26px 10px 0; 
+                font-size:24px;
+            }
+        }
+        .cylist{
+            margin-bottom:20px;
+            position:relative;
+            min-height:54px;
+            padding:0 0 30px 50px;
+            border-bottom:1px solid #ddd;
+            .allA{
+                color:#000;
+                font-size:24px;
+                margin-right:20px;
+                line-height:32px;
+            }
+            .cyidx{
+                position:absolute;
+                left:10px;
+                top:0px;
+                font-size:26px;
+            }
+        }
+    }
+}

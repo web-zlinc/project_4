@@ -12,6 +12,7 @@
                 <el-button type="primary" @click="submitForm">登录</el-button>
             </el-form-item>
         </el-form>
+        <el-alert title="用户名或密码不正确" type="error" center show-icon v-if="yes"></el-alert>
         <spinner v-if="show"></spinner>
     </div>
 </template>
@@ -27,14 +28,14 @@
               username: '',
               password: '',
               show: false,
-                
+              yes:false,
             };  
         },
         methods: {
             submitForm() {
                 this.show = true;
                 axios({
-                   url: 'http://10.3.135.246:333/back/php/user.php',
+                   url: 'http://10.3.135.246:333/back/php/admin.php',
                    method: 'post',
                    data: qs.stringify({username: this.username, password: this.password}),
                    headers: {
@@ -43,10 +44,9 @@
                 }).then(res=>{
                      this.show=false;
                     if(res.data.length>0){
-                        console.log(this)
                         this.$router.push({name: 'background'});
                     }else{
-                         alert('用户名或密码不正确');
+                         this.yes = true;
                     }
                         
                 });
