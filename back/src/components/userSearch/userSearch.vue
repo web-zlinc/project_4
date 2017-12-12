@@ -36,7 +36,7 @@
     export default{
         data:function(){
             return {
-                filter:['password','email'],
+                filter:['password','email','portrait'],
                 y_search_val: '',
                 select: '',
                 dataset:[]

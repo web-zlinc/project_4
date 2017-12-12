@@ -142,8 +142,8 @@
             }
         },
         mounted:function(){
-                // 获取存在store中的信息
-                return this.$store.state.edit;
+              // 获取存在store中的信息
+              return this.$store.state.edit;
         },
         methods:{
             y_userSave:function(){

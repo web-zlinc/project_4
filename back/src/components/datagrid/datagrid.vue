@@ -55,7 +55,6 @@
                 }
             }).then(res=>{
                 console.log(res.data)
-
                 this.dataset=res.data;
             })
         },
@@ -85,7 +84,6 @@
 
                 this.$store.commit('editInfor',editInfor);
                 this.$router.push({name:'userEdit'});
-                console.log(this)
             },
             
         },
