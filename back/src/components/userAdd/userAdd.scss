@@ -1,0 +1,19 @@
+
+.y_save,.y_add{
+    margin-right:50px;
+}
+
+ul.y_infor{
+    margin-top:10px;
+    display:flex;
+    flex-wrap:wrap;
+}
+ul.y_infor li{
+    margin-right:20px;
+    margin-bottom:20px;
+    float: left;
+    flex:1;
+    .el-select .el-input input{
+        width: 130px!important;
+    } 
+}

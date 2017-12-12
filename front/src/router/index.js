@@ -11,19 +11,41 @@ import RepchildComponent from '../components/rep-children/rep-children.vue'
 import ForumdetailsComponent from '../components/forum-details/forum-details.vue'
 import WriteforumComponent from '../components/write-forum/write-forum.vue'
 
-
 import MineComponent from '../components/sm_mine/mine/mine.vue'
 import RecordComponent from '../components/sm_mine/record/record.vue'
-import InfoComponent from '../components/sm_mine/info/information.vue'
-
+import InfoComponent from '../components/sm_mine/information/information.vue'
+import CollectComponent from '../components/sm_mine/collect/collect.vue'
+import PostComponent from '../components/sm_mine/post/post.vue'
 Vue.use(VueRouter);
-
 var router = new VueRouter({
+    // mode: 'history',
     routes: [
         {
             path: '/mine',
             name: 'mine',
-            component: MineComponent
+            component: MineComponent,
+            children:[
+                {
+                   path:'record',
+                    name:'record',
+                    component:RecordComponent 
+                },
+                {
+                    path:'info',
+                    name:'info',
+                    component:InfoComponent  
+                },
+                {
+                    path:'collect',
+                    name:'collect',
+                    component:CollectComponent
+                },
+                {
+                    path:'post',
+                    name:'post',
+                    component:PostComponent
+                }
+            ]
         },
         {
             path: '/register',
@@ -75,7 +97,9 @@ var router = new VueRouter({
             name:'write',
             component:WriteforumComponent,
         }
+        
     ]
 })
 
 export default router;
+

@@ -1,9 +1,12 @@
 $btcolor:#188AF9;
-.container{
+body{
     height: 100%;
     background-color:#F5F5F5;
     display:flex;
     flex-direction:column;
+    .mine_content{
+        height: 100%;
+    }
 }
 #m_header{
     height: 502px;
@@ -16,6 +19,8 @@ $btcolor:#188AF9;
             height: 100%;
             display:block;
             background:url('../../../assets/bgpit.png') no-repeat;
+            background-size:cover;
+            background-position:center;
         }
         
 
@@ -27,17 +32,22 @@ $btcolor:#188AF9;
 
     }
     .h_bot{
+        display:flex;
+        flex-direction:column;
         height: 235px;
         >p:nth-child(1){
+            height: 117px;
             text-align:center;
             font-size:30px;
             font-weight:bold;
             line-height: 117px;
             margin: 0;
         }
-        >p:nth-child(2){  
+        .minebtn{
+            flex:1;  
             margin-top:10px;
             text-align:center;    
+            font-size:30px;
             span{
                 font-size:28px;
                 padding:12px 40px;
@@ -57,26 +67,31 @@ $btcolor:#188AF9;
     }
 }
 #m_main{
-    flex:1;
+        flex:1;
+        // overflow:auto;
     ul{
-        background-color:#fff;
-         li{
-        font-size:32px;
-        p{
-            i{
-                padding:0 20px;
-            }
-            i:nth-child(2){
-                float:right;
-                padding-right:37px;
-            }
-            padding:35px 0px;
-            border-bottom:1px solid #EAEAEA;
+            background-color:#fff;
+        li{
+                font-size:32px;
+            p{
+                 i:nth-child(1){
+                     position:absolute;
+                     top:40px;
+                     left:30px;   
+                 }
+                i:nth-child(2){
+                    position:absolute;
+                     top:40px;
+                    right:40px;
+                 }
+                    position:relative;
+                    padding:35px 80px;
+                    border-bottom:1px solid #EAEAEA;
+           }
         }
     }
-    }
    
-    >ul:nth-child(1){
+        >ul:nth-child(1){
          margin-bottom:28px; 
     }
 }

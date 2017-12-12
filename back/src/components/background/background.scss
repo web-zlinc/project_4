@@ -28,20 +28,4 @@ main .el-menu{background-color: transparent!important;}
     margin-right:100px;
     line-height: 110px;
 }
-.y_toolbar{
-    height: 80px;
-    width: 100%;
-}
-.y_toolbar li{
-    float: left;
-}
-.el-select .el-input {
-    width: 130px;
-  }
-.input-with-select .el-input-group__prepend {
-    background-color: #fff;
-}
-.y_search{
-    margin-left:300px;
-    margin-right:100px;
-}
+.y-body{position: fixed; top: 42px; left: 0; right: 0; bottom: 32px;}
