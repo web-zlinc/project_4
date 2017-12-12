@@ -68,11 +68,4 @@ import $ from 'jquery'
         }
     }
     
-    $(function(){
-       // if($('.user').html()<1){
-       //     var p=`<p class="nobody">请<a href="/#/login">登录</a>/<a href="/#/register">注册</a>账号</p>`;
-       //    　$(p).replaceAll('.user');
-       // }
-    })
-    
 </script>
