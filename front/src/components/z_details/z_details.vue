@@ -5,7 +5,7 @@
             <span>36小时前</span>
             <h2>'转正机会、优秀团队、发展空间大'</h2>
             <ul v-if="obj">
-                <li v-for="(value,key) in obj" v-if="filter.indexOf(key)!=-1"><a href="">{{value.slice(0,2)}}</a></li>
+                <li v-for="(value,key) in obj" v-if="filter.indexOf(key)!=-1"><a href="">{{value}}</a></li>
                 
             </ul>
             <div class="zdel">
@@ -23,17 +23,17 @@
             <h2>职位描述</h2>
             <div class="cont">
                 <h3>主要职责：</h3>
-                <p>1.热爱媒体及互联网工作，喜欢视频类内容，对视频质量有一定判断力；</p>
-                <p>2.本科或硕士在校生，专业不限，新闻传播类专业同学优先考虑；</p>
-                <p>3.文字功底过硬，逻辑思维强悍，踏实认真，勤奋努力；</p>
-                <p>4.可连续实习四个月以上的优先考虑</p>
+                <p>1.{{obj.jd}}</p>
+                <p>2.{{obj.jd}}</p>
+                <p>3.{{obj.jd}}</p>
+                <p>4.{{obj.jd}}</p>
             </div>
             <div class="cont">
                 <h3>职位要求：</h3>
-                <p>1.热爱媒体及互联网工作，喜欢视频类内容，对视频质量有一定判断力；</p>
-                <p>2.本科或硕士在校生，专业不限，新闻传播类专业同学优先考虑；</p>
-                <p>3.文字功底过硬，逻辑思维强悍，踏实认真，勤奋努力；</p>
-                <p>4.可连续实习四个月以上的优先考虑</p>
+                <p>1.{{obj.jd}}</p>
+                <p>2.{{obj.jd}}</p>
+                <p>3.{{obj.jd}}</p>
+                <p>4.{{obj.jd}}</p>
             </div>
             <div class="acc">
                 <p><i class="el-icon-location-outline"></i><span>工作地点</span></p>
@@ -64,7 +64,7 @@
             //接受index的参数
             var id=this.$route.query;
             axios({
-                url:'http://localhost:3333/php/zindex.php',
+                url:'http://localhost:3333/api/zindex.php',
                 method: 'post',
                 data: qs.stringify({jid:id}),
                 headers: {

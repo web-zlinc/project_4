@@ -16,6 +16,16 @@ import RecordComponent from '../components/sm_mine/record/record.vue'
 import InfoComponent from '../components/sm_mine/information/information.vue'
 import CollectComponent from '../components/sm_mine/collect/collect.vue'
 import PostComponent from '../components/sm_mine/post/post.vue'
+
+
+import ZindexComponent from '../components/z_index/z_index.vue'
+import ZlistComponent from '../components/z_list/z_list.vue'
+import ZsearchComponent from '../components/z_search/z_search.vue'
+import ZdetailsComponent from '../components/z_details/z_details.vue'
+import ZcityComponent from '../components/citylist/citylist.vue'
+
+
+
 Vue.use(VueRouter);
 var router = new VueRouter({
     // mode: 'history',
@@ -96,6 +106,31 @@ var router = new VueRouter({
             path:'/write',
             name:'write',
             component:WriteforumComponent,
+        },
+        
+        {
+            path: '/',
+            component: ZindexComponent,
+        },
+        {
+            path:'/list',
+            name:'list',
+            component:ZlistComponent
+        },
+        {
+            path:'/search',
+            name:'search',
+            component:ZsearchComponent
+        },
+        {
+            path:'/details',
+            name:'details',
+            component:ZdetailsComponent
+        },
+        {
+            path:'/city',
+            name:'city',
+            component:ZcityComponent
         }
         
     ]
