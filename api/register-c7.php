@@ -1,9 +1,9 @@
 <?php
 /**
  * @Author: Marte
- * @Date:   2017-12-09 11:08:38
+ * @Date:   2017-12-10 11:57:36
  * @Last Modified by:   Marte
- * @Last Modified time: 2017-12-09 11:41:13
+ * @Last Modified time: 2017-12-10 12:00:17
  */
     header('Access-Control-Allow-Origin:*');
 
@@ -13,10 +13,12 @@
 
     $password = isset($_POST["password"]) ? $_POST["password"] : '';
 
-    $sql = "select * from user where phone = $phone and  password = $password";
+    $sql = "insert into user(phone,password) values('$phone','$password')";
 
-    $result = query($sql);
+    $result = add($sql);
 
     echo json_encode($result,JSON_UNESCAPED_UNICODE);
+    
+
 
 ?>

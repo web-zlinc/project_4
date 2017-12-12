@@ -1,0 +1,45 @@
+#temp{
+    height: 100%;
+    display:flex;
+    flex-direction:column;
+    overflow:hidden;
+    >li{
+        >h4,>h5{
+            height:2.03125rem;
+            display:flex;
+            position:relative;
+            >div{
+                width: 2.09375rem;
+                >img{
+                    width: 70%;
+                    border-radius:50%;
+                    transform:translate(50%,50%);
+                    margin-left:-25%;
+                    margin-top:-10%;
+                }
+            }
+            >h1{
+                flex:1;
+                >p{
+                    font-size:0.40625rem;
+                    color:#B2BCCA;
+                    padding-top:0.40625rem;
+                }
+                >p:last-child{
+                    color:black;
+                }
+            }
+            >span{
+                font-size:0.3125rem;
+                position:absolute;
+                right:0.28125rem;
+                top:0.28125rem;
+            }
+        }
+        >h5{
+            margin:0;
+            height:2.78125rem;
+            background-color:#F7F9FC;
+        }
+    }
+}

@@ -3,74 +3,42 @@
         <header id="f-header">
             <span class="f-title">论坛</span>
             <i class="el-icon-search f-search"></i>
-            <i class="el-icon-edit-outline f-edit"></i>
+            <i class="el-icon-edit-outline f-edit" @click="write"></i>
         </header>
         <ul id="f-nav">
-            <li><span class="f-active">热门</span></li>
-            <li><span>头条</span></li>
-            <li><span>攻略</span></li>
-            <li><span>吐槽</span></li>
-            <li><span>互助</span></li>
+            <li><span :class="{fActive:1==num}" @click="hot">热门</span></li>
+            <li><span :class="{fActive:2==num}" @click="headline">头条</span></li>
+            <li><span :class="{fActive:3==num}" @click="strategy">攻略</span></li>
+            <li><span :class="{fActive:4==num}" @click="low">吐槽</span></li>
+            <li><span :class="{fActive:5==num}" @click="help">互助</span></li>
         </ul>
         <main id="f-main">
             <el-carousel trigger="click">
               <el-carousel-item v-for="(item,index) in dataset" :key="index">
                     <img :src="item" />
               </el-carousel-item>
-            </el-carousel>
-            <ul class="forum-list">
-                <li>
+            </el-carousel> 
+            <ForumTemp :type="type" :key="type" v-on:ent="EneDet"></ForumTemp>
+            <!-- <ul class="forum-list">
+                <li v-for="(obj,index) in dataSet" :key="obj.uid" :id=
+                "obj.uid">
                     <div class="fl-imgbox">
-                        <img :src="portrait" alt="" />
+                        <img :src="obj.portrait"/>
                     </div>
                     <div class="fl-info">
-                        <h4>Eddie</h4>
-                        <p>这世上只有一种成功，就是能用自己喜欢的方式度过自己的一生</p>
-                        <img :src="together" />
+                        <h4 v-text="obj.nickname"></h4>
+                        <p v-text="obj.header"></p>
+                        <img :src="obj.photo" />
                         <h5>
-                            <span class="info-time">2017-12-08</span>
+                            <span class="info-time" v-text="obj.forumtime"></span>
                             <i class="el-icon-star-off like"></i>
-                            <span class="info-like">100</span>
+                            <span class="info-like" v-text="obj.likes"></span>
                             <i class="el-icon-news news"></i>
                             <span class="info-forum">37</span>
                         </h5>
                     </div>
                 </li>
-                <li>
-                    <div class="fl-imgbox">
-                        <img :src="portrait" alt="" />
-                    </div>
-                    <div class="fl-info">
-                        <h4>Eddie</h4>
-                        <p>这世上只有一种成功，就是能用自己喜欢的方式度过自己的一生</p>
-                        <img :src="together" />
-                        <h5>
-                            <span class="info-time">2017-12-08</span>
-                            <i class="el-icon-star-off like"></i>
-                            <span class="info-like">100</span>
-                            <i class="el-icon-news news"></i>
-                            <span class="info-forum">37</span>
-                        </h5>
-                    </div>
-                </li>
-                <li>
-                    <div class="fl-imgbox">
-                        <img :src="portrait" alt="" />
-                    </div>
-                    <div class="fl-info">
-                        <h4>Eddie</h4>
-                        <p>这世上只有一种成功，就是能用自己喜欢的方式度过自己的一生</p>
-                        <img :src="together" />
-                        <h5>
-                            <span class="info-time">2017-12-08</span>
-                            <i class="el-icon-star-off like"></i>
-                            <span class="info-like">100</span>
-                            <i class="el-icon-news news"></i>
-                            <span class="info-forum">37</span>
-                        </h5>
-                    </div>
-                </li>
-            </ul>
+            </ul> -->
         </main>
         <footer id="f-footer"></footer>
     </div>
@@ -78,13 +46,51 @@
 
 <script>
     import './forum-c7.scss';
+    import ForumTemp from '../forum-temp/forum-temp.vue';
     export default {
         data(){
             return {
                 dataset:[`src/assets/imgs/1.png`,`src/assets/imgs/2.png`,`src/assets/imgs/3.png`,`src/assets/imgs/4.png`,'../../../src/assets/imgs/5.png'],
                 portrait:require('../../assets/imgs/portrait.jpg'),
-                together:require('../../assets/imgs/toggeter.png')
+                together:require('../../assets/imgs/toggeter.png'),
+                type:"hot",
+                num:1,
             }
-        }
+        },
+        methods :{
+            hot:function(){
+                this.type = "hot";
+                this.num = 1;
+            },
+            headline:function(){
+                this.type= "headline";
+                this.num = 2;
+            },
+            strategy:function(){
+                this.type= 'strategy';
+                this.num = 3;
+            },
+            low:function(){
+                this.type= 'low';
+                this.num = 4;
+            },
+            help:function(){
+                this.type= 'help';
+                this.num = 5;
+            },
+            EneDet:function(e){
+                console.log(e.dataset.id);
+                //获取当前id
+                var id = e.dataset.id
+                this.$router.push({path:'/forumdetails/' + id
+                });
+            },
+            write:function(){
+                this.$router.push({name:'write'});
+            }
+        },
+        components:{
+            ForumTemp,
+        },
     }
 </script>

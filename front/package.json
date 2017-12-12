@@ -11,8 +11,11 @@
   },
   "dependencies": {
     "axios": "^0.17.1",
+    "crypto": "^1.0.1",
     "element-ui": "^2.0.7",
+    "js-md5": "^0.7.2",
     "qs": "^6.5.1",
+    "v-verify": "^1.1.1",
     "vue": "^2.4.4",
     "vue-router": "^3.0.1",
     "vuex": "^3.0.1"

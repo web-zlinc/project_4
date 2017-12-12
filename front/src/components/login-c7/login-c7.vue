@@ -9,7 +9,7 @@
                 <img src="../../assets/imgs/timg.jpg"  />
             </div>
             <div id="login">
-                <el-input  placeholder="请输入手机号" v-model="username" ></el-input>
+                <el-input  placeholder="请输入手机号" v-model="phone" ></el-input>
                 <el-input placeholder="请输入密码" type="password" v-model="password">
                 </el-input>
                 <el-button type="primary" @click="Login">学生登录</el-button>
@@ -18,7 +18,7 @@
         </main>
         <footer id="footer">
             <div id="ftr-top"></div>
-            <el-button id="ftr-botton" type="primary">学生注册</el-button>
+            <el-button id="ftr-botton" type="primary" @click="register">学生注册</el-button>
         </footer>
     </div>
 </template>
@@ -32,7 +32,7 @@
     export default {
         data(){
             return {
-                username:'',
+                phone:'',
                 password:'',
             }
         },
@@ -41,13 +41,20 @@
                 axios({
                     url:'http://localhost:1232/user-c7.php',
                     method: 'post',
-                    data: qs.stringify({username: this.username, password: this.password}),
+                    data: qs.stringify({phone: this.phone, password: this.password}),
                     headers: {
                         'Content-Type': 'application/x-www-form-urlencoded'
                     }
                 }).then(res => {
-                    console.log(res);
+                    console.log(res.data[0].uid);
+                    //传入window.localStorage.setItem保存信息id的值
+                    window.localStorage.setItem('obj',res.data[0].uid);
+                    //跳入首页
+                    // this.$router.push({name:index})
                 })
+            },
+            register(){
+                this.$router.push({name:'register'})
             }
         }
     }

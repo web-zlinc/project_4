@@ -32,10 +32,12 @@
         .form-group{
             margin:0.3125rem 0.625rem;
             position:relative;
-            .el-input__inner{
-                height:1.046875rem;
-                background-color:#EDEFF2;
-                font-size:0.35875rem;
+            .el-input{
+                .el-input__inner{
+                    height:1.046875rem;
+                    background-color:#EDEFF2;
+                    font-size:0.35875rem;
+                }  
             }
             .el-button{
                 width: 100%;

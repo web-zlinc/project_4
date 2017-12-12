@@ -41,7 +41,7 @@
                 font-size:0.515625rem;
                 color:#A4B0B7;
                 padding:0.34375rem 0;
-                &.f-active{
+                &.fActive{
                     color:#438DFC;
                     border-bottom:0.03125rem solid #438DFC;
                     font-weight:bold;
@@ -105,7 +105,7 @@
                         justify-content:space-between;
                         position:relative;
                         .info-like{
-                            padding-left:1.5625rem;
+                            padding-left:0.3225rem;
                         }
                         .info-forum{
                             padding-right:0.46875rem;
@@ -116,7 +116,7 @@
                         .like{
                             font-size:0.5rem;
                             position:absolute;
-                            left:4.171875rem;
+                            left:4.471875rem;
                             top:0;
                         }
                         .news{

@@ -7,6 +7,9 @@ import ForumComponent from '../components/forum-c7/forum-c7.vue'
 import MessageComponent from '../components/message-c7/message-c7.vue'
 import ServiceComponent from '../components/service-c7/service-c7.vue'
 import ReplyComponent from '../components/reply-c7/reply-c7.vue'
+import RepchildComponent from '../components/rep-children/rep-children.vue'
+import ForumdetailsComponent from '../components/forum-details/forum-details.vue'
+import WriteforumComponent from '../components/write-forum/write-forum.vue'
 
 
 import MineComponent from '../components/sm_mine/mine/mine.vue'
@@ -50,7 +53,7 @@ var router = new VueRouter({
         {
             path: '/reply',
             name: 'reply',
-            component: ReplyComponent
+            component: ReplyComponent,
         },
         {
             path:'/record',
@@ -61,6 +64,16 @@ var router = new VueRouter({
             path:'/info',
             name:'info',
             component:InfoComponent
+        },
+        {
+            path:'/forumdetails/:id',
+            name:'forumdetails',
+            component:ForumdetailsComponent,
+        },
+        {
+            path:'/write',
+            name:'write',
+            component:WriteforumComponent,
         }
     ]
 })
