@@ -71,7 +71,7 @@
                     _url = "http://10.3.135.246:333/back/php/userRemove.php";
                     var _uid = delItem[0].id;
                 }else if(routePath === '/jobs'){
-                    _url = "http://localhost:2277/php/jobsRemove.php";
+                    _url = "http://10.3.135.251:2277/php/jobsRemove.php";
                     var _uid = delItem[0].jid;
                 }
 

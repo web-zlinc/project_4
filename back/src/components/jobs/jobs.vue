@@ -29,7 +29,7 @@
           </li> -->
         </ul>
         <div>
-            <datagrid api="http://localhost:2277/php/job.php" :filter="filter"></datagrid>
+            <datagrid api="http://10.3.135.251:2277/php/job.php" :filter="filter"></datagrid>
         </div>
     </div>
 </template>
