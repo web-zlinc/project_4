@@ -22,13 +22,13 @@
                 </div>
             </li>
         </ul>
-        <Footer></Footer>
+        <Footers></Footers>
     </div>
 </template>
 
 <script>
     import './message-c7.scss';
-    import Footer from '../footer/footer.vue';
+    import Footers from '../footer/footer.vue';
     export default {
         data(){
             return {
@@ -51,7 +51,7 @@
             }
         },
         components:{
-            Footer,
+            Footers,
         }
     }
 </script>

@@ -1,8 +1,8 @@
 <template>
     <div id="d_container">
         <div id="zd_one">
+            <i class="el-icon-arrow-left z-back" @click="back"></i>
             <h1>{{obj.station}}</h1>
-            <span>36小时前</span>
             <h2>'转正机会、优秀团队、发展空间大'</h2>
             <ul v-if="obj">
                 <li v-for="(value,key) in obj" v-if="filter.indexOf(key)!=-1"><a href="">{{value}}</a></li>
@@ -73,6 +73,11 @@
             }).then(res => {
                 this.obj = res.data[0];
             })
+        },
+        methods:{
+            back(){
+                this.$router.push({name:"index"})
+            }
         }
     }
 </script>
