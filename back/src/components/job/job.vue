@@ -52,7 +52,7 @@
         methods: {
             save: function(){
                 // console.log(this.dataform)
-                http.get('http://localhost:2277/php/jobInser.php',{
+                http.get('http://10.3.135.251:2277/php/jobInser.php',{
                     params:{
                         company: this.dataform.company,
                         station: this.dataform.station,

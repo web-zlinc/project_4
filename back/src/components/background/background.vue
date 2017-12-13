@@ -3,8 +3,8 @@
   <!-- 头部导航 -->
     <header class="header">
     </header>
-    <div style="position: relative;height: 110px;width: 100%;background-color:#7fe;">
-      <h3 class="y_Partime">Partime</h3>
+    <div style="position: relative;height: 110px;width: 100%;background-color:#409EFF;">
+      <h3 class="y_Partime">Management System For Partime</h3>
       <div class="y_exit">
         <el-button size="small" @click="y_exit">退出</el-button>
       </div>
@@ -49,11 +49,23 @@
           select: ''
         }
       },
+      mounted(){
+        this.open();
+      },
       methods:{
         y_exit:function(){
           console.log(this.$router)
           this.$router.push({name: 'login'})
-        }
+        },
+        open() {
+
+          const h = this.$createElement;
+
+          this.$notify({  
+            title: `登录成功(ง •̀_•́)ง`,
+            message: h('i', { style: 'color: teal'}, `在这里你能对User以及Jobs两个表格进行增删查改的操作`)
+          });
+        },
       },
       components:{
         userInformation:userInformation,
