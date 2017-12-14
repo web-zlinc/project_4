@@ -105,7 +105,7 @@ import qs from 'qs'
                   axios({
                       url: 'http://localhost:1232/info.php',
                       method:'post',
-                      data: qs.stringify({phone:this.$attrs.username,updata_info:newuser}),
+                      data: qs.stringify({phone:this.user,updata_info:newuser}),
                       headers: {
                           'Content-Type': 'application/x-www-form-urlencoded'
                       }
