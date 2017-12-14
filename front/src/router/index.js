@@ -6,20 +6,11 @@ import ForumComponent from '../components/forum-c7/forum-c7.vue'
 import MessageComponent from '../components/message-c7/message-c7.vue'
 import ServiceComponent from '../components/service-c7/service-c7.vue'
 import ReplyComponent from '../components/reply-c7/reply-c7.vue'
-<<<<<<< HEAD
-// <<<<<<< HEAD
-// =======
-=======
->>>>>>> af20c2d4145439fc4e7a0237590d3b11d924e95b
+
 import RepchildComponent from '../components/rep-children/rep-children.vue'
 import ForumdetailsComponent from '../components/forum-details/forum-details.vue'
 import WriteforumComponent from '../components/write-forum/write-forum.vue'
 
-<<<<<<< HEAD
-// >>>>>>> 4aa943550cd7021760a3980d51ecd06b4932de31
-=======
-
->>>>>>> af20c2d4145439fc4e7a0237590d3b11d924e95b
 import MineComponent from '../components/sm_mine/mine/mine.vue'
 import RecordComponent from '../components/sm_mine/record/record.vue'
 import InfoComponent from '../components/sm_mine/information/information.vue'
@@ -37,12 +28,7 @@ import ZcityComponent from '../components/citylist/citylist.vue'
 
 Vue.use(VueRouter);
 var router = new VueRouter({
-<<<<<<< HEAD
-    // mode: 'history',
-// <<<<<<< HEAD
-=======
     mode: 'history',
->>>>>>> af20c2d4145439fc4e7a0237590d3b11d924e95b
     routes: [{
         path: '/mine',
         name: 'mine',
@@ -87,70 +73,8 @@ var router = new VueRouter({
         path: '/reply',
         name: 'reply',
         component: ReplyComponent
-<<<<<<< HEAD
-    }],
-// =======
-    routes: [
-        {
-            path: '/mine',
-            name: 'mine',
-            component: MineComponent,
-            children:[
-                {
-                   path:'record',
-                    name:'record',
-                    component:RecordComponent 
-                },
-                {
-                    path:'info',
-                    name:'info',
-                    component:InfoComponent  
-                },
-                {
-                    path:'collect',
-                    name:'collect',
-                    component:CollectComponent
-                },
-                {
-                    path:'post',
-                    name:'post',
-                    component:PostComponent
-                }
-            ]
-        },
-        {
-            path: '/register',
-            name: 'register',
-            component: RegisterComponent
-        },
-        {
-            path: '/forum',
-            name: 'forum',
-            component: ForumComponent
-        },
-        {
-            path: '/login',
-            name: 'login',
-            component: LoginComponent
-        },
-        {
-            path: '/message',
-            name: 'message',
-            component: MessageComponent,
-        },
-        {
-            path: '/service',
-            name: 'service',
-            component: ServiceComponent      
-        },
-        {
-            path: '/reply',
-            name: 'reply',
-            component: ReplyComponent,
-        },
-=======
-    },
->>>>>>> af20c2d4145439fc4e7a0237590d3b11d924e95b
+
+     },
         {
             path:'/record',
             name:'record',
@@ -199,9 +123,6 @@ var router = new VueRouter({
         }
         
     ]
-<<<<<<< HEAD
-// >>>>>>> 4aa943550cd7021760a3980d51ecd06b4932de31
-=======
->>>>>>> af20c2d4145439fc4e7a0237590d3b11d924e95b
+
 })
 export default router;
