@@ -60,9 +60,6 @@ import qs from 'qs'
         },
         mounted(){
               // 判断为首次添加信息时，显示身份证号
-              if(this.user==''){
-                  this.showid=true;
-              }
                   // 显示用户信息
                 axios({
                     url: 'http://localhost:1232/info.php',
@@ -77,7 +74,11 @@ import qs from 'qs'
                       var i=0;
                        $.each(res.data[0],function(index,item){
                           i++;                      
-                            $('#i_main').find('input').eq(i).val(item);                     
+                            $('#i_main').find('input').eq(i).val(item);
+                            if($('.name').val()==''){
+                                this.showid=true;
+                                // console.log(666)
+                            }                     
                       })                
                    
                 })        
