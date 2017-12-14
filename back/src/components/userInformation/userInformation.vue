@@ -22,15 +22,9 @@
           <li class="y_add">
             <el-button type="primary" style="margin-top: 15px;" plain @click="y_userAdd">添加</el-button>
           </li>
-          <!-- <li class="page">
-            <el-button-group>
-                <el-button type="primary" icon="el-icon-arrow-left">上一页</el-button>
-                <el-button type="primary">下一页<i class="el-icon-arrow-right el-icon--right"></i></el-button>
-            </el-button-group>
-          </li> -->
         </ul>
 
-        <datagrid api="http://10.3.135.246:333/back/php/userInformation.php" :filter="filter"></datagrid>
+        <datagrid api="http://10.3.135.246:333/back/php/userInformation.php" :filter="filter" :change="change"></datagrid>
         <spinner v-if="show"></spinner>
     </div>
 </template>
@@ -47,10 +41,25 @@
     export default{
         data:function(){
             return {
-                filter:['password','email','portrait'],
+                filter:['password','email','portrait','collect'],
                 y_search_val: '',
                 select: '',
-                show:false
+                show:false,
+                change:{
+                    id:"id",
+                    name:"姓名",
+                    nickname:"昵称",
+                    abstract:"一句话介绍自己",
+                    gender:"性别",
+                    age:"年龄",
+                    city:"城市",
+                    brithday:"生日",
+                    education:"学历",
+                    major:"专业",
+                    phone:"电话",
+                    idcard:"身份证",
+                    createtime:"创建时间",
+                }
             }
         },  
         methods:{

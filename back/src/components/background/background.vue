@@ -43,10 +43,6 @@
       data: function (){
         return {
           active:true,
-          input3: '',
-          input4: '',
-          input5: '',
-          select: ''
         }
       },
       mounted(){

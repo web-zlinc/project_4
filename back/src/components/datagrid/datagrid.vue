@@ -3,7 +3,7 @@
         <table v-if="dataset.length>0">
             <thead>
                 <tr>
-                    <th v-for="(value,key) in dataset[0]" v-if="filter.indexOf(key)<0">{{key}}</th>
+                    <th v-for="(value,key) in dataset[0]" v-if="filter.indexOf(key)<0">{{change[key]}}</th>
                     <th>编辑</th>
                     <th>删除</th>
                 </tr>
@@ -17,18 +17,6 @@
             </tbody>
         </table>
     </div>
-
-    <!-- <el-table :data="dataset" style="width: 100%">
-        
-        <el-table-column v-for="(value,key) in dataset[0]" :prop="key" :label="key">
-        </el-table-column>
-    </el-table> -->
-
-    <!-- <el-table :data="tableData" border style="width: 100%">
-        <el-table-column prop="date" label="日期" width="180"></el-table-column>
-        <el-table-column prop="name" label="姓名" width="180"></el-table-column>
-        <el-table-column prop="address" label="地址"></el-table-column>
-    </el-table> -->
 </template>
 
 <script>
@@ -44,9 +32,10 @@
         data:function(){
             return{
                 dataset:[],
+                
             }
         },
-        props:['api','filter'],
+        props:['api','filter','change'],
         mounted:function(){
             axios({
                 url:this.api,
@@ -54,7 +43,7 @@
                     'Content-Type': 'application/x-www-form-urlencoded'
                 }
             }).then(res=>{
-                console.log(res.data)
+                console.log(res)
                 this.dataset=res.data;
             })
         },
@@ -94,7 +83,7 @@
             },
             // 点击编辑跳转至编辑组件进行编辑
             edit:function(event,index){
-
+                // 需要将当前行中的值存起来
                 let routePath = this.$route.path;
                 if(routePath === '/userInformation'){
 
@@ -107,11 +96,7 @@
                     let jobsEditInfor = this.dataset[index];
                     this.$store.commit('jobsEditInfor',jobsEditInfor);
                     this.$router.push({name: 'jobsEdit'});
-                    
                 }
-
-                // 需要将当前行中的值存起来
-
             },
             successPro: function(a){
                 this.$notify({
@@ -120,7 +105,6 @@
                     type: 'success'
                 });
             }
-            
         },
     }
 </script>

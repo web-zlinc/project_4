@@ -21,15 +21,9 @@
           <li class="h_add">
             <el-button type="primary" style="margin-top: 15px;" plain @click="add()">添加</el-button>
           </li>
-          <!-- <li class="page">
-            <el-button-group>
-                <el-button type="primary" icon="el-icon-arrow-left">上一页</el-button>
-                <el-button type="primary">下一页<i class="el-icon-arrow-right el-icon--right"></i></el-button>
-            </el-button-group>
-          </li> -->
         </ul>
         <div>
-            <datagrid api="http://10.3.135.251:2277/php/job.php" :filter="filter"></datagrid>
+            <datagrid api="http://10.3.135.251:2277/php/job.php" :filter="filter" :change="change"></datagrid>
         </div>
     </div>
 </template>
@@ -49,7 +43,25 @@
                 dataform: {},
                 h_search_val: '',
                 select: '',
-                show: false
+                show: false,
+                change:{
+                    jid:"id",
+                    company:"公司",
+                    station:"职位",
+                    salary:"薪酬",
+                    site:"地点",
+                    degree:"职位要求",
+                    duration:"工作时长",
+                    rate:"工作频率",
+                    opty:"工作待遇",
+                    lnsize:"公司规模",
+                    logo:"公司LOGO",
+                    cdetails:"公司简介",
+                    jd:"职位描述",
+                    jtype:"岗位信息",
+                    recommend:"热门",
+                    time:"时间",
+                }
 
             }
         },

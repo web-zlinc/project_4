@@ -6,13 +6,13 @@ import ForumComponent from '../components/forum-c7/forum-c7.vue'
 import MessageComponent from '../components/message-c7/message-c7.vue'
 import ServiceComponent from '../components/service-c7/service-c7.vue'
 import ReplyComponent from '../components/reply-c7/reply-c7.vue'
-<<<<<<< HEAD
-=======
+// <<<<<<< HEAD
+// =======
 import RepchildComponent from '../components/rep-children/rep-children.vue'
 import ForumdetailsComponent from '../components/forum-details/forum-details.vue'
 import WriteforumComponent from '../components/write-forum/write-forum.vue'
 
->>>>>>> 4aa943550cd7021760a3980d51ecd06b4932de31
+// >>>>>>> 4aa943550cd7021760a3980d51ecd06b4932de31
 import MineComponent from '../components/sm_mine/mine/mine.vue'
 import RecordComponent from '../components/sm_mine/record/record.vue'
 import InfoComponent from '../components/sm_mine/information/information.vue'
@@ -31,7 +31,7 @@ import ZcityComponent from '../components/citylist/citylist.vue'
 Vue.use(VueRouter);
 var router = new VueRouter({
     // mode: 'history',
-<<<<<<< HEAD
+// <<<<<<< HEAD
     routes: [{
         path: '/mine',
         name: 'mine',
@@ -76,8 +76,8 @@ var router = new VueRouter({
         path: '/reply',
         name: 'reply',
         component: ReplyComponent
-    }]
-=======
+    }],
+// =======
     routes: [
         {
             path: '/mine',
@@ -183,6 +183,6 @@ var router = new VueRouter({
         }
         
     ]
->>>>>>> 4aa943550cd7021760a3980d51ecd06b4932de31
+// >>>>>>> 4aa943550cd7021760a3980d51ecd06b4932de31
 })
 export default router;

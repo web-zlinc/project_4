@@ -73,7 +73,6 @@
                 var delItem = this.dataset.splice(index, 1);
                 // 获得删除当前行的uid
                 var uid = delItem[0].id;
-                console.log(uid)
                 // 发起删除请求
                 axios({
                     url:"http://10.3.135.246:333/back/php/userRemove.php",
@@ -92,7 +91,6 @@
 
                 this.$store.commit('editInfor',editInfor);
                 this.$router.push({name:'userEdit'});
-                console.log(this)
             },
 
         }

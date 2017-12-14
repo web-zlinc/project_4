@@ -51,9 +51,6 @@
                 <el-input type="textarea" autosize placeholder="一句话描述" v-model="abstract"></el-input>
             </li>
         </ul>
-        <!-- <el-input v-model="city" placeholder="所在地"></el-input> -->
-        
-
     </div>
 </template>
 
@@ -172,13 +169,11 @@
                     }).then(res=>{
                         if(res.data == '修改成功'){
                             alert(res.data)
-                            
                         }
                     })
                 }else{
                     alert('请将信息填写完整')
                 }
-                // this.$router.push({name :'userAdd'})
             },
             y_userBack:function(){
                 this.$router.push({name :'userInformation'})
