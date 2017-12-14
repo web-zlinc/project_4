@@ -76,7 +76,7 @@
         },
         methods:{
             back(){
-                this.$router.push({name:"index"})
+               this.$router.back(-1);
             }
         }
     }

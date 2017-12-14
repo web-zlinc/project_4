@@ -9,11 +9,11 @@ body{
     }
 }
 #m_header{
-    height: 502px;
+    height: 6.693333rem;
     background-color:#fff;
-    margin-bottom:28px;
+    margin-bottom:0.373333rem;
     .h_top{
-        height: 213px;
+        height: 2.84rem;
         img{
             width: 100%;
             height: 100%;
@@ -26,7 +26,7 @@ body{
 
     }
     .h_center{
-        height: 54px;
+        height: 0.72rem;
         display:flex;
         justify-content:center;
 
@@ -34,34 +34,34 @@ body{
     .h_bot{
         display:flex;
         flex-direction:column;
-        height: 235px;
+        height: 3.133333rem;
         >p:nth-child(1){
-            height: 117px;
+            height: 1.56rem;
             text-align:center;
-            font-size:30px;
+            font-size:0.4rem;
             font-weight:bold;
-            line-height: 117px;
+            line-height: 1.56rem;
             margin: 0;
         }
         .minebtn{
             flex:1;  
-            margin-top:10px;
+            margin-top:0.133333rem;
             text-align:center;    
-            font-size:30px;
+            font-size:0.4rem;
             span{
-                font-size:28px;
-                padding:12px 40px;
+                font-size:0.373333rem;
+                padding:0.16rem 0.533333rem;
                 background-color:$btcolor;
                 color:#fff;
-                border-radius:20px;
+                border-radius:0.266667rem;
             }
         }
     }
     .toux{
-        margin-top:-54px;
+        margin-top:-0.72rem;
         display:block;
-        height: 128px;
-        width: 128px;
+        height: 1.706667rem;
+        width: 1.706667rem;
         border-radius:50%;
         background:url('../../../assets/imgs/toux.png') no-repeat;
     }
@@ -72,26 +72,26 @@ body{
     ul{
             background-color:#fff;
         li{
-                font-size:32px;
+                font-size:0.426667rem;
             p{
                  i:nth-child(1){
                      position:absolute;
-                     top:40px;
-                     left:30px;   
+                     top:0.533333rem;
+                     left:0.4rem;   
                  }
                 i:nth-child(2){
                     position:absolute;
-                     top:40px;
-                    right:40px;
+                     top:0.533333rem;
+                    right:0.533333rem;
                  }
                     position:relative;
-                    padding:35px 80px;
+                    padding:0.466667rem 1.066667rem;
                     border-bottom:1px solid #EAEAEA;
            }
         }
     }
    
         >ul:nth-child(1){
-         margin-bottom:28px; 
+         margin-bottom:0.373333rem; 
     }
 }

@@ -99,7 +99,7 @@
                         to:this.mobile,
                         timestamp:times,
                         sig:md5(md55),
-                        smsContent:'【胖友科技】您的验证码为'+ codes +'，请于5分钟内正确输入，如非本人操作，请忽略此短信。'
+                        smsContent:'【韩梅梅科技】您的验证码为'+ codes +'，请于5分钟内正确输入，如非本人操作，请忽略此短信。'
                     }),
                     method: 'post',
                     headers: {

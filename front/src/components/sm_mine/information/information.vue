@@ -75,13 +75,11 @@ import qs from 'qs'
                        $.each(res.data[0],function(index,item){
                           i++;                      
                             $('#i_main').find('input').eq(i).val(item);
-                            if($('.name').val()==''){
-                                this.showid=true;
-                                // console.log(666)
-                            }                     
+
                       })                
                    
-                })        
+                }) 
+                      
         },
         methods:{
             i_return:function(){

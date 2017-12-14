@@ -5,51 +5,51 @@
     position:relative;
     flex-direction:column;
     .z_top{
-        height:80px;
+        height:1.066667rem;
         width: 100%;
         opacity:1;
         position:absolute;
         left:0;
         top:0;
         z-index:1;
-        padding:10px;
+        padding:0.133333rem;
         span{
-            font-size:30px;
+            font-size:0.4rem;
             color:#fff;
-            margin-right:100px;
+            margin-right:1.333333rem;
         }
         .io{
             position:absolute;
-            left:74px;
+            left:0.986667rem;
             color:#fff;
-            top:60px;
-            font-size:34px;
+            top:0.8rem;
+            font-size:0.453333rem;
         }
         input{
-            height: 56px;
-            width:500px;
-            padding-left:50px;
-            font-size:34px;
-            border-radius:28px;
+            height: 0.746667rem;
+            width:6.666667rem;
+            padding-left:0.666667rem;
+            font-size:0.453333rem;
+            border-radius:0.373333rem;
         }
         .it{
             position:absolute;
-            left:200px;
-            top:60px;
-            font-size:34px;
+            left:2.666667rem;
+            top:0.8rem;
+            font-size:0.453333rem;
         }
     }
     .z_banner{
-        height:300px;
+        height:4.0rem;
         overflow:hidden;
         position:relative;
         z-index:0;
     }
     .z_nav{
-        height: 200px;
+        height: 2.666667rem;
         display:flex;
         background:#fff;
-        margin-bottom:20px;
+        margin-bottom:0.266667rem;
         ul{
            display:flex;
            overflow:auto;
@@ -61,13 +61,13 @@
             justify-content:center;
             align-items:center;
             img{
-                height: 98px;
-                width: 98px;
-                margin-bottom:18px;
+                height: 1.306667rem;
+                width: 1.306667rem;
+                margin-bottom:0.24rem;
                 border-radius:50%;
             }
             a{
-                font-size:28px;
+                font-size:0.373333rem;
                 color:#5A647A;
             }
            }
@@ -75,7 +75,7 @@
     }
     .z_main{
         display:flex;
-        padding:0 20px;
+        padding:0 0.266667rem;
         flex:1;
         background:#fff;
         ul{
@@ -84,13 +84,13 @@
             flex-direction:column;
             li{
                 height: 25%;
-                padding:20px 0px;
-                border-bottom:1px solid #ccc;
+                padding:0.266667rem 0.0rem;
+                border-bottom:0.013333rem solid #ccc;
                 display:flex;
                 img{
-                    height:120px;
-                    width:120px;
-                    margin-right:22px;
+                    height:1.6rem;
+                    width:1.6rem;
+                    margin-right:0.293333rem;
                 }
                 .zmr{
                     flex:1;
@@ -99,25 +99,25 @@
                     height:100%;
                     .one{
                         .fl{
-                            font-size:34px;
+                            font-size:0.453333rem;
                             float:left;
                         }
                         .fr{
-                            font-size:24px;
+                            font-size:0.32rem;
                             color:#BDC9DA;
                             float:right;
                         }
                     }
                     .two{
                         color:#BDC9DA;
-                        font-size:24px;
-                        margin:10px 0;
+                        font-size:0.32rem;
+                        margin:0.133333rem 0;
                     }
                     .three{
-                        font-size:26px;
+                        font-size:0.346667rem;
                         .t1,.t2{
                             color:#BDC9DA;
-                            margin-right:70px;
+                            margin-right:0.933333rem;
                             
                         }
                         .t3{

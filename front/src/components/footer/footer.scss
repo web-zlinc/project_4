@@ -1,9 +1,11 @@
 .z_footer{
     height: 100px;
     ul{
+        background-color:#fff;
+        border-top:0.013333rem solid #EAEAEA;
         display:flex;
         justify-content:space-around;
-        padding:14px 0;
+        padding:0.186667rem 0;
         li{
             display:flex;
             flex:1;
@@ -11,12 +13,13 @@
             justify-content:center;
             align-items:center;
             i{
-                font-size:40px;
-                margin-bottom:12px;
+                font-size:0.533333rem;
+                margin-bottom:0.106667rem;
             }
-            a{
-                font-size:20px;
+            span{
+                font-size:0.4rem;
             }
         }
+
     }
 }

@@ -4,10 +4,10 @@
     background:#F5F5F5;
     flex-direction:column;
     #zd_one{
-        padding:50px 32px 0 34px;
+        padding:0.666667rem 0.426667rem 0 0.453333rem;
         background:#fff;
         display:flex;
-        margin-bottom:24px;
+        margin-bottom:0.32rem;
         flex-wrap:wrap;
         justify-content:space-between;
         .z-back{
@@ -15,20 +15,20 @@
             color:#10A6E2;
         }
         h1{
-            width: 510px;
-            font-size:40px;
-            line-height: 56px;
-            margin-bottom:42px;
+            width: 6.8rem;
+            font-size:0.533333rem;
+            line-height: 0.746667rem;
+            margin-bottom:0.56rem;
         }
         span{
-            font-size:24px;
+            font-size:0.32rem;
             color:#999999;
         }
         h2{
-            font-size:28px;
+            font-size:0.373333rem;
             width: 100%;
             color:#10A6E2;
-            margin-bottom:66px;
+            margin-bottom:0.88rem;
 
         }
         ul{
@@ -36,13 +36,13 @@
             flex-wrap:wrap;
             border-bottom:1px dashed #ccc;
             li{
-                padding:18px 24px;
+                padding:0.24rem 0.32rem;
                 background:#FAFAFA;
-                border-radius:20px;
-                margin:0 33px 30px 0;
+                border-radius:0.266667rem;
+                margin:0 0.44rem 0.4rem 0;
                 a{
                   color:#000;
-                  font-size:22px;
+                  font-size:0.293333rem;
 
                 }
             }
@@ -50,33 +50,33 @@
         }
         .zdel{
             width: 100%;
-            border-top:1px solid dashed;
-            padding:35px 0;
+            border-top:0.013333rem solid dashed;
+            padding:0.466667rem 0;
             position:relative;
             display:flex;
             img{
-                width:110px;
-                height: 110px;
-                margin-right:24px;
+                width:1.466667rem;
+                height: 1.466667rem;
+                margin-right:0.32rem;
             }
             .delc{
                 flex:1;
-                padding-top:10px;
+                padding-top:0.133333rem;
                 .p1{
-                    font-size: 26px;
+                    font-size: 0.346667rem;
                 } 
                 .p2{
-                    margin:8px 0;
+                    margin:0.106667rem 0;
                 }
                 .p2,.p3{
-                    font-size: 22px;
+                    font-size: 0.293333rem;
                 }
             }
             i{
                 position:absolute;
                 right:0;
                 top:45%;
-                font-size:24px;
+                font-size:0.32rem;
             }
         }
     }

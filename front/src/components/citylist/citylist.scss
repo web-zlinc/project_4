@@ -1,37 +1,37 @@
 #container{
     .main{
         h2{
-            font-size:30px;
+            font-size:0.4rem;
             background:#ddd;
-            margin-bottom:10px;
+            margin-bottom:0.133333rem;
         }
         .hot{
-            padding-left:10px;
+            padding-left:0.133333rem;
             .allhot{
                 color:#000;
-                padding:0 10px;
-                line-height:40px;
-                margin:0 26px 10px 0; 
-                font-size:24px;
+                padding:0 0.133333rem;
+                line-height:0.533333rem;
+                margin:0 0.346667rem 0.133333rem 0; 
+                font-size:0.32rem;
             }
         }
         .cylist{
-            margin-bottom:20px;
+            margin-bottom:0.266667rem;
             position:relative;
-            min-height:54px;
-            padding:0 0 30px 50px;
+            min-height:0.72rem;
+            padding:0 0 0.4rem 0.666667rem;
             border-bottom:1px solid #ddd;
             .allA{
                 color:#000;
-                font-size:24px;
-                margin-right:20px;
-                line-height:32px;
+                font-size:0.32rem;
+                margin-right:0.266667rem;
+                line-height:0.426667rem;
             }
             .cyidx{
                 position:absolute;
-                left:10px;
-                top:0px;
-                font-size:26px;
+                left:0.133333rem;
+                top:0.0rem;
+                font-size:0.346667rem;
             }
         }
     }

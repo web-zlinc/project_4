@@ -9,18 +9,18 @@ body .i_container{
         top:0;
         left:0;
         background-color:#188AF9;
-        height:88px;
+        height:1.173333rem;
         display:flex;
         li{
             i{
-                padding:10px;
+                padding:0.133333rem;
             }
             span{
-                font-size:30px;
+                font-size:0.4rem;
             }
             flex:1;
-            line-height: 88px;
-            font-size:34px;
+            line-height: 1.173333rem;
+            font-size:0.453333rem;
             color:#fff;
             border:0;
         }
@@ -41,8 +41,8 @@ body .i_container{
             position:relative;
             background-color:#fff;
             display:flex;
-            font-size:30px;
-            padding:30px 30px;
+            font-size:0.4rem;
+            padding:0.4rem 0.4rem;
              border-bottom:1px solid #EAEAEA; 
              label{
                 flex:1.7;
@@ -50,7 +50,7 @@ body .i_container{
              input{
                 flex:5;
                 border:0;
-                font-size:30px;
+                font-size:0.4rem;
                 text-align:right;
                 background-color:#fff;
              }
@@ -59,17 +59,17 @@ body .i_container{
              }
              i{
                 text-align:right;
-                line-height: 40px;
+                line-height: 0.533333rem;
                 flex:0.5;
              }
         }
         .avatar-uploader{        
-            height: 147px;
+            height: 1.96rem;
             .el-upload{
-                margin-top:20px;
+                margin-top:0.266667rem;
                 border:1px solid #EAEAEA;
-                width: 110px;
-                height: 110px;
+                width: 1.466667rem;
+                height: 1.466667rem;
                 border-radius:50%;
                 background:url('../../../assets/imgs/toux.png') no-repeat;
                 background-position:center;
@@ -77,8 +77,8 @@ body .i_container{
             }
             .avatar {
                 border-radius:50%;
-                width: 110px;
-                height: 110px;
+                width: 1.466667rem;
+                height: 1.466667rem;
                 display: block;
               }
         }
@@ -95,15 +95,15 @@ body .i_container{
             }
         }
         li:nth-child(1){
-            padding: 0 30px;
-            line-height: 147px;
+            padding: 0 0.4rem;
+            line-height: 1.96rem;
          i{
             flex:0.15;
-            line-height: 147px;
+            line-height: 1.96rem;
          }
         }
         li:nth-child(5n){
-            margin-top:30px;
+            margin-top:0.4rem;
         }
         }
 }

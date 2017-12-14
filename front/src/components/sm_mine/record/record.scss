@@ -5,25 +5,26 @@
     flex-direction:column;
     #r_header{
     position:flex;
-    top:0px;
+    top:0.0rem;
     left:0;
-    height: 88px;
-    font-size:30px;
+    height: 1.173333rem;
+    font-size:0.4rem;
     background-color:#188AF9;
     color:#fff;
-    line-height: 88px;
+    line-height: 1.173333rem;
     p{
         text-align:center;
         position:relative;
-        font-size:32px;
+        font-size:0.426667rem;
         i{
-            padding:10px;
+            padding:0.133333rem;
             position:absolute;
-            top:20px;
-            left:20px;
+            top:0.266667rem;
+            left:0.266667rem;
         }
         
     }
+
 } 
     .el-tabs{
 
@@ -34,19 +35,18 @@
             position:flex;
             top:0px;
             left:0;
-            height: 93px;
+            height: 1.24rem;
             .el-tabs__nav{
                 width: 100%;
-                height: 93px;
+                height: 1.24rem;
                 display:flex;
                 border-bottom:1px solid #EAEAEA;
                 #tab-first{
                     text-align:center;
-                    // width: 50%;
                     flex:1;
-                    height: 93px;
-                    line-height: 93px;
-                    font-size:30px;
+                    height: 1.24rem;
+                    line-height: 1.24rem;
+                    font-size:0.4rem;
                     text-align:center;
                 }
                 #tab-second{
@@ -60,6 +60,64 @@
         .el-tabs__content{
             flex:1;
             overflow:auto;
+        }
+    }
+    .sm_main{
+        display:flex;
+        padding:0 0.266667rem;
+        flex:1;
+        background:#fff;
+        ul{
+            flex:1;
+            overflow:auto;
+            flex-direction:column;
+            li{
+                height: 25%;
+                padding:0.266667rem 0.0rem;
+                display:flex;
+                img{
+                    height:1.6rem;
+                    width:1.6rem;
+                    margin-right:0.293333rem;
+                }
+                .zmr{
+                    flex:1;
+                    display:flex;
+                    flex-direction:column;
+                    height:100%;
+                    .one{
+                        .fl{
+                            font-size:0.453333rem;
+                            float:left;
+                        }
+                        .fr{
+                            padding:0.133333rem 0.266667rem;
+                            font-size:0.32rem;
+                            color:#BDC9DA;
+                            float:right;
+                        }
+                        
+                    }
+
+                    .two{
+                        color:#BDC9DA;
+                        font-size:0.32rem;
+                        margin:0.133333rem 0;
+                    }
+                    .three{
+                        font-size:0.346667rem;
+                        .t1,.t2{
+                            color:#BDC9DA;
+                            margin-right:0.933333rem;
+                            
+                        }
+                        .t3{
+                            color:#F96969;
+                            float:right;
+                        }
+                    }
+                }
+            }
         }
     }
 }

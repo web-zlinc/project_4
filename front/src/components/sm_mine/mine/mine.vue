@@ -9,7 +9,7 @@
             </div>    
             <div class="h_bot">
                 <showif v-if="!show"></showif>
-                <showphone v-if="show"></showphone>
+                <showphone v-else></showphone>
                 <p class="minebtn"><span @click="info()">完善信息</span></p>
             </div> 
         </header>
