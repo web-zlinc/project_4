@@ -1,4 +1,4 @@
-#container{
+#containers{
     height:100%;
     background:#ccc;
     display:flex;
@@ -22,7 +22,7 @@
             position:absolute;
             left:74px;
             color:#fff;
-            top:22px;
+            top:60px;
             font-size:34px;
         }
         input{
@@ -34,8 +34,8 @@
         }
         .it{
             position:absolute;
-            left:188px;
-            top:22px;
+            left:200px;
+            top:60px;
             font-size:34px;
         }
     }

@@ -1,6 +1,6 @@
 <template>
   <div id="app">
-    <router-view :username="username"></router-view>
+    <router-view></router-view>
   </div>
 </template>
 
@@ -10,7 +10,7 @@
       name: 'app',
       data () {
         return {
-          username:'15625142968'
+          // username:window.localStorage.getItem('obj'),
         }
       }
     }

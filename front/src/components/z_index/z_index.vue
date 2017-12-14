@@ -1,5 +1,5 @@
 <template>
-    <div id="container">
+    <div id="containers">
         <div class="z_top">
             <span @click="showcity">全国</span>
             <i class='io el-icon-arrow-down' @click="showcity"></i>
@@ -9,8 +9,8 @@
         <div class="z_banner">
 
             <el-carousel indicator-position="outside">
-                <el-carousel-item v-for="idx in 6" :key="idx">
-                    <img :src="'./src/assets/zb'+idx+'.png'"/>
+                <el-carousel-item v-for="idx in 5" :key="idx">
+                    <img :src="'./src/assets/imgs/'+idx+'.png'"/>
                 </el-carousel-item>
             </el-carousel>
         </div>
@@ -96,7 +96,7 @@
         },
         mounted(){
             axios({
-                url:'http://localhost:3333/api/zindex.php',
+                url:'http://localhost:1232/zindex.php',
                 method: 'post',
                 data: qs.stringify({recommend:'true'}),
                 headers: {

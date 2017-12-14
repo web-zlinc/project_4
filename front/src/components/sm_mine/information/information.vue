@@ -1,5 +1,5 @@
 <template>
-    <div class="i_container" :username='username'>
+    <div class="i_container">
         <ul id="mine_header">
             <li><i class="el-icon-arrow-left" @click="i_return"></i></li>
             <li>个人资料</li>
@@ -54,36 +54,34 @@ import qs from 'qs'
             imageUrl: '',
             value1: '',
             value2:'' ,
-            showid:false
-
+            showid:false,
+            user:window.localStorage.getItem('obj')
           }
         },
-        computed:{
-          username:{
-            get:function(){
+        mounted(){
               // 判断为首次添加信息时，显示身份证号
-              if($('.name').val()==''){
-                  this.showid=true;
-              }
                   // 显示用户信息
                 axios({
-                    url: 'http://localhost:666/api/info.php',
+                    url: 'http://localhost:1232/info.php',
                     method:'post',
-                    data: qs.stringify({username:this.$attrs.username}),
+                    data: qs.stringify({username:window.localStorage.getItem('obj')}),
                     headers: {
                         'Content-Type': 'application/x-www-form-urlencoded'
                     }
-                }).then(res=>{               
+                }).then(res=>{  
+                      console.log(res);            
                       var len=$('#i_main').find('input').length;
                       var i=0;
                        $.each(res.data[0],function(index,item){
                           i++;                      
-                            $('#i_main').find('input').eq(i).val(item);                     
+                            $('#i_main').find('input').eq(i).val(item);
+                            if($('.name').val()==''){
+                                this.showid=true;
+                                // console.log(666)
+                            }                     
                       })                
                    
                 })        
-            }
-          }
         },
         methods:{
             i_return:function(){
@@ -103,20 +101,20 @@ import qs from 'qs'
                     arr.push($lis.eq(i).val());
                 } 
                 // 更新信息
-                if(this.$attrs.username!=" "){
+                // if(user!=" "){
                   var newuser=JSON.stringify(arr);
                   axios({
-                      url: 'http://localhost:666/api/info.php',
+                      url: 'http://localhost:1232/info.php',
                       method:'post',
-                      data: qs.stringify({phone:this.$attrs.username,updata_info:newuser}),
+                      data: qs.stringify({phone:this.user,updata_info:newuser}),
                       headers: {
                           'Content-Type': 'application/x-www-form-urlencoded'
                       }
                   }).then(res=>{                 
                         this.$message('你的资料已保存成功！');
-                        // this.$router.push({name:'mine'});   
+                        this.$router.push({name:'mine'});   
                   })
-                }
+                // }
              
                 // 插入新记录
                 // 转换为字符串

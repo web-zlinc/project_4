@@ -40,13 +40,14 @@
                 </li>
             </ul> -->
         </main>
-        <footer id="f-footer"></footer>
+        <Footers></Footers>
     </div>
 </template>
 
 <script>
     import './forum-c7.scss';
     import ForumTemp from '../forum-temp/forum-temp.vue';
+    import Footers from '../footer/footer.vue';
     export default {
         data(){
             return {
@@ -55,6 +56,7 @@
                 together:require('../../assets/imgs/toggeter.png'),
                 type:"hot",
                 num:1,
+                username:window.localStorage.getItem('obj'),
             }
         },
         methods :{
@@ -79,18 +81,26 @@
                 this.num = 5;
             },
             EneDet:function(e){
-                console.log(e.dataset.id);
                 //获取当前id
                 var id = e.dataset.id
                 this.$router.push({path:'/forumdetails/' + id
                 });
             },
             write:function(){
+                if(this.username == null){
+                    this.$message({
+                        message:'打开失败，请先登录',
+                        duration:1000,
+                        type:'error',
+                    })
+                    return ;
+                }
                 this.$router.push({name:'write'});
             }
         },
         components:{
             ForumTemp,
+            Footers,
         },
     }
 </script>

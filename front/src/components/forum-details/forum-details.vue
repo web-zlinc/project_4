@@ -37,13 +37,12 @@
             axios({
                 url:'http://localhost:1232/forum-c7.php',
                 method: 'post',
-                data: qs.stringify({uid:this.uid}),
+                data: qs.stringify({phone:this.uid}),
                 headers: {
                     'Content-Type': 'application/x-www-form-urlencoded'
                 }
             }).then(res => {
                 this.dataset = res.data;
-                console.log(this.dataset)
             })
         },
         methods:{

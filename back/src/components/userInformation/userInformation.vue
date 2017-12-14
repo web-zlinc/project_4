@@ -41,7 +41,7 @@
     export default{
         data:function(){
             return {
-                filter:['password','email','portrait','collect'],
+                filter:['password','email','portrait','collect_job'],
                 y_search_val: '',
                 select: '',
                 show:false,

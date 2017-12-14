@@ -1,12 +1,53 @@
 
-.y_datagrid{
-    width:100%; 
-    overflow:auto;
-    tbody tr:nth-child(even){
-        background-color:#ddd;
-    }
+// .y_datagrid{
+//     width:100%; 
+//     overflow:auto;
+//     border-bottom-width: 1px;
+//     border-bottom-style: solid;
+//     border-bottom-color: rgb(230, 189, 189);
+//     overflow:hidden;
+//     /*文本超出时隐藏*/
+//     white-space:nowrap;
+//     text-overflow:ellipsis;
+
+// }
+
+table {
+    table-layout: fixed;
+    /*只有定义表格的算法为fixed,th才有效果*/
+
+    border-collapse: collapse;
+    /*边框合并模式*/
+
 }
+
 table,th,td{
+     border-collapse: collapse;
+     /*边框合并模式*/
+
     border:1px solid #ccc;
     font-size:10px;
+    padding: 5px 10px;
+    font-size: 12px;
+    font-family: Verdana;
+    
+}
+table,td{
+    color: rgb(85, 170, 244);
+    overflow:hidden;
+    /*超出的文字隐藏*/
+
+    text-overflow:ellipsis;
+    /*文字超出后,显示省略号*/
+
+    width:100%;
+    white-space:nowrap; 
+    /*文字不换行*/
+
+    word-break:keep-all;
+    /*文字不换行*/
+}
+th{
+    background-color: rgb(64, 158, 255);
+    color:#fff;
 }

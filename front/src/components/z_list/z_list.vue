@@ -49,7 +49,7 @@
                     var degree=this.$parent.degree;
                     if(site){
                         axios({
-                            url:'http://localhost:3333/api/zindex.php',
+                            url:'http://localhost:1232/zindex.php',
                             method: 'post',
                             data: qs.stringify({site:site}),
                             headers: {
@@ -61,7 +61,7 @@
                     }
                     else if(salary){
                         axios({
-                            url:'http://localhost:3333/api/zindex.php',
+                            url:'http://localhost:1232/zindex.php',
                             method: 'post',
                             data: qs.stringify({salary:salary}),
                             headers: {
@@ -72,7 +72,7 @@
                         })
                     }else if(degree){
                         axios({
-                            url:'http://localhost:3333/api/zindex.php',
+                            url:'http://localhost:1232/zindex.php',
                             method: 'post',
                             data: qs.stringify({degree:degree}),
                             headers: {
@@ -83,7 +83,7 @@
                         })
                     }else{
                         axios({
-                            url:'http://localhost:3333/api/zindex.php',
+                            url:'http://localhost:1232/zindex.php',
                             method: 'post',
                             data: qs.stringify({jtype:jtype}),
                             headers: {

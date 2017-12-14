@@ -1,6 +1,11 @@
 <template>
     <div class="rec_content">
-    <div id="r_header"><p><i class="el-icon-arrow-left" @click="p_return"></i>{{posts}}</p></div>
+        <div id="r_header">
+            <p>
+                <i class="el-icon-arrow-left" @click="p_return"></i>
+                <span v-text="info"></span>
+            </p>
+        </div>
         <main id="r_main">
             <nothing v-if="nodata"></nothing>
         </main>
@@ -10,11 +15,11 @@
     import '../record/record.scss'
     import nothing from '../no-data/no-data.vue'
     export default{
-        data:function(){
-        return {
-            nodata:true,
-            posts:'我的帖子'
-        }
+        data(){
+            return {
+                nodata: true,
+                info: '我的帖子',
+            }
         },
         methods:{
             p_return:function(){
@@ -23,7 +28,7 @@
         },
         components:{
             nothing:nothing
-    }
+        }
     }
 
 </script>

@@ -1,6 +1,6 @@
 <template>
     <ul class="forum-list">
-        <li v-for="(obj,index) in dataSet" :key="obj.uid" :data-id="obj.uid" @click="counts" >
+        <li v-for="(obj,index) in dataSet" :key="obj.uid" :data-id="obj.phone" @click="counts" >
             <div class="fl-imgbox">
                     <img :src="obj.portrait"/>
             </div>

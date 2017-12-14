@@ -20,7 +20,7 @@
         },
         mounted(){
             axios({
-                url:'http://localhost:3333/api/city.php',
+                url:'http://localhost:1232/city.php',
                 headers: {
                     'Content-Type': 'application/x-www-form-urlencoded'
                 }
