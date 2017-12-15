@@ -59,21 +59,32 @@
         }
         .el-tabs__content{
             flex:1;
-            overflow:auto;
+            display:flex;
+            
+            .el-tab-pane{
+                flex:1;
+                overflow:auto;
+            }
         }
     }
-    .sm_main{
+    #pane-first{
+        
         display:flex;
-        padding:0 0.266667rem;
+        // padding:0 0.266667rem;
         flex:1;
         background:#fff;
-        ul{
+        >ul{
+            background-color:#F5F5F5;
             flex:1;
+            width: 100%;
             overflow:auto;
             flex-direction:column;
             li{
-                height: 25%;
+                background-color:#fff;
+                flex:1;
+                // height: 20%;
                 padding:0.266667rem 0.0rem;
+                margin-bottom:0.266667rem;
                 display:flex;
                 img{
                     height:1.6rem;
@@ -93,8 +104,10 @@
                         .fr{
                             padding:0.133333rem 0.266667rem;
                             font-size:0.32rem;
-                            color:#BDC9DA;
+                            color:#fff;
                             float:right;
+                            margin-right:0.133333rem;
+                            background-color:skyblue;
                         }
                         
                     }
@@ -119,5 +132,6 @@
                 }
             }
         }
+       
     }
 }

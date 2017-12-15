@@ -4,17 +4,14 @@
             <p><i class="el-icon-arrow-left" @click="c_return"></i>我的收藏</p>
         </div>
         <el-tabs id="r_nav" v-model="activeName">
-        <el-tab-pane label="收藏职位" name="first"></el-tab-pane>
-        <el-tab-pane label="收藏公司" name="second"></el-tab-pane>
-        <div id="r_main">
-            <div class="sm_main">
-            <ul v-if="dataset.length > 0" >
+        <el-tab-pane label="收藏职位" name="first">
+             <ul v-if="dataset!=''">
                 <li :gid="obj.jid" v-for="(obj, index) in dataset" @click="handleClick(obj.jid)">
                     <img :src="'../../'+obj.logo" />
                     <div class="zmr">
                         <p class="one">
                             <span class='fl'>{{obj.station}}</span>
-                            <span class="fr">X</span>
+                            <span class="fr" @click.stop="remove">X</span>
                         </p>
                         <p class="two">{{obj.company}}</p>
                         <p class="three">
@@ -24,10 +21,16 @@
                         </p>
                     </div>
                 </li>
-            </ul>
-        </div>
-            <nothing v-if="data"></nothing>
-        </div>
+            
+            </ul>     
+            <!-- <datalist v-if="dataset!=''"></datalist> -->
+            <nothing v-else></nothing>
+        </el-tab-pane>
+        <el-tab-pane label="收藏公司" name="second">
+            <ul v-if="dataset2!=''"></ul>
+            <nothing v-else></nothing>
+        </el-tab-pane>   
+
         </el-tabs>
         
     </div>
@@ -43,8 +46,8 @@
         data:function(){
             return {
                 activeName: 'first',
-                data:false,
-                dataset:[]
+                dataset:[],
+                dataset2:[]
             }
         },
         mounted(){
@@ -56,8 +59,13 @@
                     'Content-Type': 'application/x-www-form-urlencoded'
                 }
             }).then(res => {
+                if(res.data==''){
+                    this.data=true;
+                }
                 this.dataset = res.data;
+              
             })
+
         },
         methods:{
             c_return:function(){
@@ -68,19 +76,29 @@
                     name: 'details',
                     query:idx
                 });
+            },
+            remove:function(e){
+                var currentLi=$(e.target).parents('li');
+                // 移除当前li
+                currentLi.remove();
+                var jid=currentLi.attr('gid');
+                 axios({
+                url:'http://localhost:1232/collect.php',
+                method: 'post',
+                data: qs.stringify({jphone:window.localStorage.getItem('obj'),jid:jid}),
+                headers: {
+                    'Content-Type': 'application/x-www-form-urlencoded'
+                }
+                }).then(res => {
+                    console.log(res)
+                })
             }
            
         },
         components:{
-            nothing:nothing
+            nothing
             
         }
     }
-    $(function(){
-        $('.fr').click(function(e){
-            e.stopPropagation();
-            console.log(666)
 
-        })
-    })
 </script>
