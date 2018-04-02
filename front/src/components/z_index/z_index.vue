@@ -8,7 +8,6 @@
             <input type="text" placeholder="500强机会" @click="skip"/>
         </div>
         <div class="z_banner">
-
             <el-carousel indicator-position="outside">
                 <el-carousel-item v-for="idx in 5" :key="idx">
                     <img :src="'./src/assets/imgs/'+idx+'.png'"/>
@@ -17,23 +16,10 @@
         </div>
         <div class="z_nav">
             <ul>
-                <li>
-                    <img src="../../assets/zn1.png" alt="" />
-                    <a href="#">一周两天</a>
+                <li v-for="(item,idx) in nav" @click="type(idx)">
+                    <img :src="'./src/assets/zn'+idx+'.png'"/>
+                    <a href="#">{{item}}</a>
                 </li>
-                <li>
-                    <img src="../../assets/zn2.png" alt="" />
-                    <a href="#">一周两天</a>
-                </li>
-                <li>
-                    <img src="../../assets/zn3.png" alt="" />
-                    <a href="#">一周两天</a>
-                </li>
-                <li>
-                    <img src="../../assets/zn4.png" alt="" />
-                    <a href="#">一周两天</a>
-                </li>
-
             </ul>
         </div>
         <div class="z_main">
@@ -73,6 +59,7 @@
         data:function(){
             return {
                 dataset: [],
+                nav:['短期实习','一周两天','转正机会','日薪两百'],
                 id:'',
                 show:false
             }
@@ -92,7 +79,10 @@
             },
             showcity(){
                 this.$router.push({name:'city'})
-            } 
+            },
+            type(a){
+                console.log(a);
+            }   
 
         },
         mounted(){
@@ -109,24 +99,4 @@
         }
     }
 
-    
-
-
 </script>
-<style>
-  .el-carousel__item img{
-    color: #475669;
-    font-size: 18px;
-   
-    line-height: 300px;
-    margin: 0;
-  }
-  
-  .el-carousel__item:nth-child(2n) {
-    background-color: #99a9bf;
-  }
-  
-  .el-carousel__item:nth-child(2n+1) {
-    background-color: #d3dce6;
-  }
-</style>

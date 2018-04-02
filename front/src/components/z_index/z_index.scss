@@ -22,7 +22,7 @@
             position:absolute;
             left:0.986667rem;
             color:#fff;
-            top:0.8rem;
+            top:0.3rem;
             font-size:0.453333rem;
         }
         input{
@@ -34,16 +34,28 @@
         }
         .it{
             position:absolute;
-            left:2.666667rem;
-            top:0.8rem;
+            left:2.5rem;
+            top:0.3rem;
             font-size:0.453333rem;
         }
     }
     .z_banner{
         height:4.0rem;
-        overflow:hidden;
-        position:relative;
         z-index:0;
+        .el-carousel__item img{
+            color: #475669;
+            width: 100%;
+            height:100%;   
+            font-size: 0.3rem;
+            line-height: 5.0rem;
+            margin: 0;
+          }
+          .el-carousel__item:nth-child(2n) {
+            background-color: #99a9bf;
+          }
+          .el-carousel__item:nth-child(2n+1) {
+            background-color: #d3dce6;
+          }
     }
     .z_nav{
         height: 2.666667rem;

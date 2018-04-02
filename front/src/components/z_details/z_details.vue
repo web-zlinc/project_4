@@ -6,7 +6,6 @@
             <h2>'转正机会、优秀团队、发展空间大'</h2>
             <ul v-if="obj">
                 <li v-for="(value,key) in obj" v-if="filter.indexOf(key)!=-1"><a href="">{{value}}</a></li>
-                
             </ul>
             <div class="zdel">
                 <img :src="obj.logo"/>
